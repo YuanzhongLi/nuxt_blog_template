@@ -1,0 +1,70 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "extends": [
+    "plugin:nuxt/recommended",
+    "plugin:vue/strongly-recommended",
+    "prettier",
+    "airbnb"
+  ],
+  "plugins": [
+    "prettier",
+    "vue"
+  ],
+  "rules": {
+    "react/no-this-in-sfc": [
+      "off"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "import/no-unresolved": [
+      "off"
+    ],
+    "max-len": [
+      "off"
+    ],
+    "no-param-reassign": [
+      "off"
+    ],
+    "no-irregular-whitespace": [
+      "off"
+    ],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    "no-useless-escape": [
+      "off"
+    ],
+    "quote-props": [
+      "error",
+      "consistent"
+    ]
+  }
+}
