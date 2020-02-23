@@ -28,17 +28,17 @@ export default {
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: '東京大学情報理工学系研究科創造情報学専攻でアーキテクチャやOSを研究している学生です！ 低レイヤー以外にもweb技術や創造情報のプログラミング試験についても共用できたらと思います！'
-      }
+        content: '東京大学情報理工学系研究科創造情報学専攻でアーキテクチャやOSを研究している学生です！ 低レイヤー以外にもweb技術や創造情報のプログラミング試験についても共用できたらと思います！',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -49,6 +49,7 @@ export default {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -58,6 +59,10 @@ export default {
     {
       src: '~/plugins/axios',
       ssr: true,
+    },
+    {
+      src: '~plugins/font-awesome',
+      ssr: false,
     },
   ],
   /*
@@ -93,7 +98,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         // Run ESLint on save
         config.module.rules.push({
@@ -116,6 +121,6 @@ export default {
           }),
         );
       }
-    }
-  }
-}
+    },
+  },
+};
