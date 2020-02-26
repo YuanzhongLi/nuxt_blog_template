@@ -47,13 +47,13 @@ export default {
       return `${this.siteUrl}/api`;
     },
     siteName() {
-      return 'estie（エスティ）';
+      return 'site name';
     },
     siteFullName() {
       return `${this.siteName}`;
     },
     emailPlaceholder() {
-      return 'info@estie.co.jp';
+      return 'info@...';
     },
   },
   mounted() {

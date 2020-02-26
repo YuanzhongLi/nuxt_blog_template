@@ -5,14 +5,13 @@ export const requireCsrfTokenMethods = ['post', 'put', 'patch'];
 // CSRFトークンが不要なAPI
 export const notUseCsrfTokenActions = [
   // ログイン
-  '/auth/login/agent',
-  '/auth/login/tenant',
+  '/auth/login/admin',
   // 新規パスワード発行
-  '/agent/password_new',
-  '/tenant/password_new',
+  '/admin/password_new',
+  '/admin/password_new',
   // 新規登録（通常）
-  '/agent/signup/signup_normal',
-  '/tenant/signup/signup_normal',
+  '/admin/signup/signup_normal',
+  '/admin/signup/signup_normal',
   // 新規登録（確認）
   '/signup/confirm',
 ];
@@ -26,18 +25,6 @@ export default function ({ $axios }) {
       notUseCsrfTokenActions.indexOf(config.url) === -1
       && requireCsrfTokenMethods.indexOf(config.method) !== -1
     ) {
-      if (config.url.includes('agent')) {
-        config.headers.common['X-CSRF-TOKEN'] = await $axios
-          .$get('/auth/generate_csrf_token/agent')
-          .then(data => data.agentCsrfToken)
-          .catch(log.errorAndReturnNull);
-      }
-      if (config.url.includes('tenant')) {
-        config.headers.common['X-CSRF-TOKEN'] = await $axios
-          .$get('/auth/generate_csrf_token/tenant')
-          .then(data => data.tenantCsrfToken)
-          .catch(log.errorAndReturnNull);
-      }
       if (config.url.includes('admin')) {
         config.headers.common['X-CSRF-TOKEN'] = await $axios
           .$get('/auth/generate_csrf_token/admin')

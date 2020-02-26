@@ -1,4 +1,3 @@
-// import { KMS } from 'aws-sdk';
 import consola from 'consola';
 import Meta from './meta';
 

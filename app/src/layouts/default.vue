@@ -1,70 +1,49 @@
 <template>
   <div>
-    <Loading v-if="showLoadingModal" />
-    <Notification
-      v-if="errorMessage"
-      icon="fas fa-exclamation-triangle"
-      type="error"
-      :close-message="resetNotificationMessage"
-    >
-      {{ errorMessage }}
-    </Notification>
-    <Notification
-      v-if="successMessage"
-      icon="fas fa-exclamation-circle"
-      type="success"
-      :close-message="resetNotificationMessage"
-    >
-      {{ successMessage }}
-    </Notification>
-    <div>
-      <nuxt />
+    <the-header />
+
+    <div class="l-container">
+      <div class="l-main">
+        <nuxt />
+      </div>
+      <div class="l-sidebar">
+        <the-sidebar />
+      </div>
     </div>
+
+    <the-footer />
   </div>
 </template>
 
-
 <script>
-import { mapState } from 'vuex';
-import Loading from '~/components/elements/common/Loading';
-import Notification from '~/components/elements/common/Notification';
-import notification from '~/mixins/notification';
+import TheHeader from '~/components/TheHeader';
+import TheSidebar from '~/components/TheSidebar';
+import TheFooter from '~/components/TheFooter';
 
 export default {
   components: {
-    Loading,
-    Notification,
+    TheHeader,
+    TheSidebar,
+    TheFooter,
   },
-  middleware: 'injectDevice',
-  mixins: [notification],
-  computed: {
-    ...mapState(['layout']),
-    errorMessage() {
-      return this.$store.state.layout.errorMessage;
-    },
-    successMessage() {
-      return this.$store.state.layout.successMessage;
-    },
-    showLoadingModal() {
-      return this.$store.state.layout.showLoadingModal;
-    },
-  },
-
 };
 </script>
 
-<style scoped>
-html {
-  font-size: 62.5%; /* default font size 10px */
-  font-family: YakuHanJP, Helvetica, Arial, sans-serif !important;
+<style scoped lang="scss">
+.l-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-body {
-  margin: 0;
-  background: #f4f6f9;
-  color: #263442;
-  font-size: 1.4rem;
-  line-height: 1;
-  -webkit-font-smoothing: subpixel-antialiased;
+.l-main {
+  width: calc(100% - 340px);
+  float: left;
+}
+.l-sidebar {
+  width: 320px;
+  float: right;
 }
 </style>
