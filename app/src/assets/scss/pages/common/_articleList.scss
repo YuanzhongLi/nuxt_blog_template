@@ -1,0 +1,83 @@
+@mixin p-articleList() {
+  padding: 24px 0;
+  background: $white;
+
+  &__cnt {
+    margin: 0 auto;
+    width: 700px;
+
+    &Anchor {
+      @include flex-align-items-center;
+      padding: 16px;
+      color: $text_primary;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        background: $cell_hover;
+      }
+    }
+
+    &Thumb {
+      margin-right: 12px;
+      width: 220px;
+      height: 120px;
+      @include inline-background-image(cover);
+    }
+
+    &Item {
+      & + .p-articleList__cntItem {
+        border-top: 1px solid $element_border;
+      }
+    }
+
+    &Info {
+      flex: 1;
+    }
+
+    &Ttl {
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      @include multi-text-skip(2);
+    }
+
+    &Txt {
+      margin-top: 8px;
+      color: $text_secondary;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      @include multi-text-skip(2);
+    }
+
+    &Time {
+      display: inline-block;
+      margin-top: 8px;
+      color: $text_secondary;
+      font-size: 1.2rem;
+
+      &Icon {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &--sp {
+    padding: 0;
+
+    .p-articleList {
+      &__cnt {
+        width: 100%;
+
+        &Anchor {
+          align-items: flex-start;
+          padding: 12px;
+        }
+
+        &Thumb {
+          width: 120px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}

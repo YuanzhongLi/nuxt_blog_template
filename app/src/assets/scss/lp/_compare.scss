@@ -1,0 +1,102 @@
+@mixin compare() {
+  padding: 36px 0;
+  background: $white;
+
+  &__ttl {
+    margin-bottom: 56px;
+    color: $lp_ttl;
+    font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-align: center;
+
+    &::before {
+      display: inline-block;
+      margin-bottom: 4px;
+      width: 112px;
+      height: 16px;
+      background: url(~assets/images/lp/before-after.png) center center /contain no-repeat;
+      content: '';
+    }
+  }
+
+  &__lists {
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 1024px;
+  }
+
+  &__item {
+    position: relative;
+    margin: 0 40px;
+    width: 440px;
+    text-align: center;
+
+    &::before {
+      position: absolute;
+      top: -16px;
+      left: 16px;
+      content: '';
+    }
+
+    &--before {
+      &::before {
+        width: 161px;
+        height: 54px;
+        background: url(~assets/images/lp/compare_before.png) center center /contain no-repeat;
+      }
+    }
+
+    &--after {
+      &::before {
+        width: 136px;
+        height: 52px;
+        background: url(~assets/images/lp/compare_after.png) center center /contain no-repeat;
+      }
+    }
+
+    &Ttl {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 32px;
+      color: $lp_ttl;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+
+  &__img {
+    margin-bottom: 8px;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  &__txt {
+    font-size: 1.4rem;
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__ttl {
+      margin-bottom: 48px;
+    }
+
+    &__lists {
+      display: block;
+      margin: 0 16px;
+      width: auto;
+    }
+
+    &__item {
+      margin: 24px 0 0;
+
+      & + .compare__item {
+        margin: 48px 0 0;
+      }
+      width: 100%;
+    }
+  }
+}

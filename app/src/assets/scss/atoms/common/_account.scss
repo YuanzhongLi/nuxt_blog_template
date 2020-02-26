@@ -1,0 +1,83 @@
+@mixin a-account() {
+  position: relative;
+
+  &__anchor {
+    display: flex;
+    margin-right: 16px;
+    padding: 4px 8px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+
+    &.is-open {
+      .a-account__anchorIcon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    &Thumb {
+      margin-right: 8px;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      @include inline-background-image(cover);
+    }
+
+    &Company {
+      display: inline-block;
+      margin-bottom: 4px;
+      color: $text_secondary;
+      font-size: 1.1rem;
+    }
+
+    &Name {
+      color: $text_primary;
+      font-size: 1.4rem;
+    }
+
+    &Icon {
+      @include inline-flex-align-items-center;
+      margin-left: 20px;
+      color: lighten($text_secondary, 16%);
+      font-size: 1.6rem;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__cnt {
+    position: absolute;
+    top: 64px;
+
+    &List {
+      position: relative;
+      padding: 8px 12px;
+      background: $white;
+      border-radius: 2px;
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+
+      &::before {
+        position: absolute;
+        top: -6px;
+        left: 22px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 6px 6px 6px;
+        border-color: transparent transparent $white transparent;
+        content: '';
+      }
+    }
+
+    &Anchor {
+      display: inline-block;
+      padding: 8px 0;
+      cursor: pointer;
+      @include text-link($text_primary);
+    }
+  }
+}

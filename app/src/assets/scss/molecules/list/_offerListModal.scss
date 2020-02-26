@@ -1,0 +1,136 @@
+@mixin m-offerListModal() {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.4);
+
+  &__cnt {
+    position: relative;
+    margin: 40px auto;
+    padding: 36px 24px;
+    width: 50%;
+    background: $white;
+    text-align: center;
+
+    &Ttl {
+      margin-bottom: 4px;
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    &Sub {
+      margin-bottom: 24px;
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__list {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+  &__table {
+    width: 100%;
+    &Head,
+    &Body {
+      padding: 12px 8px;
+      vertical-align: middle;
+      line-height: 1.5;
+      border: 1px solid $table_border;
+    }
+    &Head {
+      background: $table_bg;
+      color: $table_txt;
+      font-weight: bold;
+      text-align: center;
+    }
+    &Body {
+      background: $white;
+    }
+    &List {
+      text-align: left;
+    }
+    &Item {
+      &::before {
+        display: inline-block;
+        content: '・';
+      }
+    }
+    &Anchor {
+      @include text-link($text_link);
+      &Icon {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    @include inline-flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: $text_secondary;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: $text_primary;
+      cursor: pointer;
+    }
+  }
+
+  &--sp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $white;
+    z-index: 2;
+    overflow-y: scroll;
+
+    .m-offerListModal {
+      &__cnt {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: $white;
+        text-align: center;
+
+        &Head {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          @include flex-center;
+          height: 56px;
+          background: $white;
+          box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+          z-index: 2;
+        }
+
+        &Sub {
+          margin-bottom: 0;
+        }
+      }
+
+      &__list {
+        padding: 72px 16px 0;
+        width: auto;
+        max-height: inherit;
+        overflow: inherit;
+      }
+      &__item {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

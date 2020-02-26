@@ -1,0 +1,26 @@
+@mixin a-searchEmpty() {
+  text-align: center;
+  padding: 96px 0;
+  width: 100%;
+  &__icon {
+    color: $text_disabled;
+    font-size: 4.8rem;
+  }
+  &__ttl {
+    margin-top: 32px;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  &__txt {
+    margin-top: 24px;
+    font-size: 1.4rem;
+  }
+  &__anchor {
+    display: inline-block;
+    margin-top: 40px;
+    @include action-btn($btn_action_primary, $white);
+    padding: 16px 32px;
+    font-size: 1.4rem;
+    border-radius: calc((1.4rem + 32px) / 2);
+  }
+}

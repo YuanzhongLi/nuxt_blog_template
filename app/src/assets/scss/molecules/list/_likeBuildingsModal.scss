@@ -1,0 +1,182 @@
+@mixin m-likeBuildingsModal() {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.4);
+  &__cnt {
+    position: relative;
+    margin: 40px auto;
+    padding: 36px 24px;
+    width: 50%;
+    background: $white;
+    border-radius: 2px;
+    text-align: center;
+    &Ttl {
+      margin-bottom: 4px;
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+    &Sub {
+      margin-bottom: 16px;
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+  &__list {
+    max-height: 500px;
+    overflow-y: scroll;
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  &__item {
+    width: 25%;
+    float: left;
+  }
+  &__anchor {
+    display: block;
+    overflow: hidden;
+    margin: 8px;
+    border: 1px solid $element_border;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: $text_primary;
+    &:hover {
+      .m-likeBuildingsModal__anchorThumbImg {
+        transform: scale(1.1);
+      }
+    }
+    &Thumb {
+      position: relative;
+      padding-top: 52.25%;
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 48px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, #000);
+        z-index: 1;
+      }
+      &Ttl {
+        position: absolute;
+        color: $white;
+        right: 8px;
+        bottom: 8px;
+        left: 8px;
+        @include multi-text-skip(2);
+        z-index: 2;
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-align: left;
+        line-height: 1.5;
+      }
+      &Img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: transform 0.2s linear;
+        @include inline-background-image(cover);
+        box-shadow: none;
+      }
+    }
+    &Info {
+      margin: 8px;
+      color: $text_secondary;
+      font-size: 1.2rem;
+      &Item {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        text-align: left;
+        & + .m-offerListModal__anchorInfoItem {
+          margin-top: 4px;
+        }
+        &Icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 14px;
+          height: 14px;
+        }
+        &Txt {
+          margin-left: 4px;
+          flex: 1;
+          @include text-skip;
+        }
+      }
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    @include inline-flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: $text_secondary;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+    transition: all 0.2s ease-in;
+    &:hover {
+      color: $text_primary;
+      cursor: pointer;
+    }
+  }
+  &--sp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $white;
+    z-index: 2;
+    overflow-y: scroll;
+    .m-likeBuildingsModal {
+      &__cnt {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background: $white;
+        text-align: center;
+        &Head {
+          position: fixed;
+          top: 0;
+          right: 0;
+          left: 0;
+          @include flex-center;
+          height: 56px;
+          background: $white;
+          box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+          z-index: 3;
+        }
+        &Sub {
+          margin-bottom: 0;
+        }
+      }
+      &__list {
+        margin-bottom: 4px;
+        padding: 60px 4px 0;
+        max-height: inherit;
+        overflow: inherit;
+      }
+      &__item {
+        width: 50%;
+      }
+      &__anchor {
+        margin: 4px;
+      }
+    }
+  }
+}

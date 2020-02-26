@@ -1,0 +1,72 @@
+/* ---------------------------------
+  COMMON
+--------------------------------- */
+@import 'common/sideNav';
+@import 'common/header';
+@import 'common/editSetting';
+@import 'common/mobileHeader';
+@import 'common/mobileTab';
+@import 'common/mobileFooter';
+@import 'common/pcFooter';
+@import 'common/modal';
+@import 'common/formFooter';
+
+/* ---------------------------------
+  HOME
+--------------------------------- */
+@import 'home/accountBox';
+@import 'home/feature';
+@import 'home/recommend';
+@import 'home/offering';
+@import 'home/offerEmpty';
+@import 'home/mobileMainCnt';
+@import 'home/editSettingModal';
+
+/* ---------------------------------
+  BUILDING DETAIL
+--------------------------------- */
+@import 'buildingDetail/buildingHeader';
+@import 'buildingDetail/otherBuildingSwiper';
+
+/* ---------------------------------
+  MESSAGE
+--------------------------------- */
+@import 'message/inbox';
+@import 'message/sendBox';
+@import 'message/chatBox';
+@import 'message/chatHeader';
+@import 'message/fileList';
+
+/* ---------------------------------
+  EMAP
+--------------------------------- */
+@import 'emap/editCondition';
+@import 'emap/listing';
+@import 'emap/listingBuildingSwiper';
+
+/* ---------------------------------
+  INFO
+--------------------------------- */
+@import 'info/accountInfo';
+@import 'info/changeEmail';
+@import 'info/changePassword';
+
+/* ---------------------------------
+  LIST
+--------------------------------- */
+@import 'list/offerListModal';
+@import 'list/likeBuildingsModal';
+@import 'list/tenantList';
+@import 'list/tenantListTable';
+
+/* ---------------------------------
+  OFFICE
+--------------------------------- */
+@import 'office/searchBox';
+@import 'office/popularArea';
+@import 'office/prefectures';
+@import 'office/mobilePrefectures';
+@import 'office/articles';
+@import 'office/searchModal';
+@import 'office/resultAside';
+@import 'office/detailSearch';

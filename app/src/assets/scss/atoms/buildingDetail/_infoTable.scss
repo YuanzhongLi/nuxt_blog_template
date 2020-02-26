@@ -1,0 +1,53 @@
+@mixin a-infoTable() {
+  font-size: 1.3rem;
+
+  &__head,
+  &__table {
+    vertical-align: middle;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+
+  &__head {
+    padding: 8px;
+    width: 160px;
+    text-align: left;
+    word-wrap: break-word;
+    font-weight: bold;
+  }
+
+  &__table {
+    &Item {
+      & + .a-infoTable__tableItem {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &--sp {
+    width: 100%;
+
+    .a-infoTable {
+      &__head,
+      &__table {
+        vertical-align: middle;
+        line-height: 1.5;
+      }
+
+      &__head {
+        padding: 12px 8px;
+        width: 100px;
+        background: $table_bg;
+        border: 1px solid $table_border;
+        color: $table_txt;
+        font-weight: bold;
+      }
+
+      &__table {
+        margin-bottom: 8px;
+        padding: 12px 8px;
+        border: 1px solid $table_border;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@mixin m-lpBuildingMultiSwiper() {
+  position: relative;
+  width: 480px;
+
+  &__cnt {
+    text-align: center;
+  }
+
+  &__list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 464px;
+
+    &Item {
+      flex-shrink: 0;
+      margin: 8px;
+      width: 216px;
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @include flex-center;
+    width: 32px;
+    height: 60px;
+    border: 1px solid $element_border;
+    border-radius: 4px;
+    background: $white;
+    cursor: pointer;
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+
+    &Icon {
+      color: $ignore_action;
+      font-size: 1.6rem;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+}

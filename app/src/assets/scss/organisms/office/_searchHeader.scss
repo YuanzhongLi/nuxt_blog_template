@@ -1,0 +1,52 @@
+@mixin o-searchHeader() {
+  @include flex-center;
+  width: 100%;
+  height: 440px;
+  background: url('~assets/images/office/searchHeader_bg.png') center center /cover no-repeat $white;
+  &__cnt {
+    margin: 0 auto;
+    width: 1024px;
+    text-align: center;
+  }
+  &__ttl {
+    color: $white;
+    font-weight: bold;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+  }
+  &__search {
+    margin-top: 48px;
+    width: 540px;
+    border-radius: 2px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+  }
+  &--sp {
+    display: block;
+    padding: 64px 16px;
+    height: auto;
+    text-align: center;
+    .o-searchHeader {
+      &__ttl {
+        color: $white;
+        font-weight: bold;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+        text-align: center;
+        line-height: 1.6;
+      }
+      &__btn {
+        display: inline-block;
+        margin-top: 32px;
+        padding: 16px 24px;
+        background: $btn_action_primary;
+        color: $white;
+        font-weight: bold;
+        font-size: 1.4rem;
+        border-radius: 4px;
+        &Icon {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}

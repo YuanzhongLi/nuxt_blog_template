@@ -1,0 +1,51 @@
+@mixin p-mybuildings() {
+  margin: 16px;
+  padding: 24px 16px;
+  border: 1px solid $element_border;
+  border-radius: 2px;
+  background: $white;
+  &__cnt {
+    & + .p-mybuildings__cnt {
+      margin-top: 24px;
+    }
+  }
+  &__ttl {
+    padding: 4px 8px;
+    border-left: 4px solid $text_primary;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  &__explain {
+    margin-top: 12px;
+    font-size: 1.3rem;
+  }
+  &__table {
+    margin-top: 16px;
+  }
+  &__empty {
+    padding: 48px 0;
+    text-align: center;
+    color: $text_disabled;
+    &Icon {
+      font-size: 4rem;
+    }
+    &Txt {
+      margin-top: 12px;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+  }
+  &--sp {
+    background: $white;
+    .p-mybuildings {
+      &__list {
+        padding: 8px;
+      }
+      &__item {
+        & + .p-mybuildings__item {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

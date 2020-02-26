@@ -1,0 +1,78 @@
+@mixin p-buildingDetail() {
+  overflow-y: scroll;
+  height: 100%;
+  background: $white;
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 32px 0;
+    width: 1024px;
+  }
+
+  &__info {
+    padding: 24px 0;
+    border-bottom: 1px solid $table_border;
+    &Ttl {
+      margin-bottom: 12px;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    &::after {
+      display: block;
+      clear: both;
+      content: '';
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    &Img {
+      float: left;
+      margin-right: 16px;
+      width: 460px;
+    }
+
+    &Table {
+      width: 548px;
+      float: left;
+    }
+  }
+
+  &--sp {
+    overflow: inherit;
+    height: inherit;
+
+    .p-buildingDetail {
+      &__info {
+        padding: 12px;
+        border: none;
+
+        &Img {
+          margin-bottom: 16px;
+          float: none;
+          width: 100%;
+        }
+
+        &Table {
+          float: none;
+          width: 100%;
+        }
+
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+      &__askingItem {
+        & + .p-buildingDetail__askingItem {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

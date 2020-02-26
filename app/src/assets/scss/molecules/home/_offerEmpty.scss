@@ -1,0 +1,89 @@
+@mixin m-offerEmpty() {
+  padding: 32px 16px;
+  text-align: center;
+
+  &::before {
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    background: url('~assets/images/home/empty.png') center /contain no-repeat;
+    content: '';
+  }
+
+  &__ttl {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  &__txt {
+    margin-top: 12px;
+    color: $text_secondary;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  &__anchor {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 24px;
+    width: 160px;
+    height: 48px;
+    line-height: 48px;
+
+    &Txt {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      display: inline-block;
+      background: $btn_action_primary;
+      border-radius: 24px;
+      color: $white;
+      font-weight: bold;
+      font-size: 1.4rem;
+      transition: all 0.2s ease-in;
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      background: rgba(62, 139, 255, 0.5);
+      z-index: 1;
+      border-radius: 24px;
+      width: 160px;
+      height: 48px;
+      animation: pulsate 1.2s ease-out;
+      animation-iteration-count: infinite;
+      content: '';
+    }
+
+    &:hover {
+      .o-cntSection__emptyAnchorTxt {
+        transform: scale(1.04);
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.15, 1.35);
+    opacity: 0;
+  }
+}

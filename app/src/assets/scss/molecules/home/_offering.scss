@@ -1,0 +1,58 @@
+@mixin m-offering() {
+  width: 100%;
+  &__item {
+    & + .m-offering__item {
+      border-top: 1px solid $element_border;
+    }
+
+    &--loading {
+      &::before {
+        display: block;
+        margin: 16px auto;
+        width: 32px;
+        height: 32px;
+        background: url('~assets/images/loading.gif') center /contain no-repeat;
+        content: '';
+      }
+    }
+  }
+
+  &__anchor {
+    display: block;
+    color: $text_primary;
+    transition: all 0.1s ease-in;
+    &--offer {
+      cursor: pointer;
+      &:hover {
+        background: $cell_hover;
+      }
+    }
+  }
+  &__loaded {
+    display: inline-block;
+    margin: 24px 0;
+    color: $text_secondary;
+  }
+
+  &--sp {
+    padding: 0 8px;
+
+    .m-offeringFile {
+      &__item {
+        float: inherit;
+        padding: 8px 0;
+        width: 100%;
+
+        & + .m-offeringFile__item {
+          border-top: 1px solid $element_border;
+        }
+
+        &Wrap {
+          overflow: inherit;
+          border: none;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

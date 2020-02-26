@@ -1,0 +1,69 @@
+@mixin m-signUpEmail() {
+  &__label {
+    margin-bottom: 16px;
+    color: $text_primary;
+    font-weight: normal;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  &__wrap {
+    display: flex;
+
+    &--sp {
+      display: block;
+    }
+  }
+
+  &__input {
+    flex: 1;
+  }
+
+  &__btn {
+    @include flex-align-items-center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  &__submit {
+    @include flex-align-items-center;
+    margin-left: 12px;
+    padding: 0 16px;
+    height: 100%;
+    border-radius: 2px;
+    font-size: 1.3rem;
+    @include action-btn($btn_action_primary, $white);
+
+    &--sp {
+      margin: 0;
+      padding: 16px 12px;
+    }
+
+    &Icon {
+      margin-right: 8px;
+    }
+  }
+
+  &__login {
+    display: none;
+
+    &--sp {
+      display: inline-block;
+      color: $text_link;
+      font-size: 1.3rem;
+    }
+  }
+
+  &--building {
+    .m-signUpEmail__wrap {
+      display: block;
+    }
+
+    .m-signUpEmail__submit {
+      margin: 8px 0 0 0;
+      padding: 16px 0;
+      display: block;
+      text-align: center;
+    }
+  }
+}

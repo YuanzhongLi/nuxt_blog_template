@@ -1,0 +1,76 @@
+@mixin m-feature() {
+  padding: 32px 0;
+  text-align: center;
+
+  &__ttl {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  &__list {
+    display: inline-flex;
+    margin-top: 24px;
+  }
+
+  &__item {
+    margin: 0 16px;
+    width: 172px;
+
+    &::before {
+      display: inline-block;
+      margin: 0 auto;
+      width: 74px;
+      height: 74px;
+      content: '';
+    }
+
+    &--offer {
+      &::before {
+        background: url('~assets/images/home/offer.png') center /contain no-repeat;
+      }
+    }
+
+    &--search {
+      &::before {
+        background: url('~assets/images/home/search.png') center /contain no-repeat;
+      }
+    }
+
+    &--recommend {
+      &::before {
+        background: url('~assets/images/home/recommend.png') center /contain no-repeat;
+      }
+    }
+  }
+
+  &__subTtl {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  &__txt {
+    margin-top: 12px;
+    color: $text_secondary;
+    font-size: 1.2rem;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  &--sp {
+    .m-feature {
+      &__list {
+        display: block;
+      }
+
+      &__item {
+        margin: 0 48px;
+        width: auto;
+
+        & + .m-feature__item {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@mixin o-homeMain {
+  &__item {
+    border: 1px solid $element_border;
+    border-radius: 2px;
+    background: $white;
+    & + .o-homeMain__item {
+      margin-top: 16px;
+    }
+  }
+}

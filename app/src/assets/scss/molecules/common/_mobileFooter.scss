@@ -1,0 +1,59 @@
+@mixin m-mobileFooter() {
+  padding: 32px 16px 12px;
+  width: 100%;
+  background: $footer_bg;
+  position: relative;
+
+  &__cnt {
+    display: block;
+    width: 100%;
+    background: url('~assets/images/logo_rec_white.svg') right top /136px 39px no-repeat;
+  }
+
+  &__list {
+    margin-bottom: 12px;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: flex-start;
+
+      .m-mobileFooter__item {
+        margin: 0 4px 0 0;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 8px;
+  }
+
+  &__sns {
+    display: inline-block;
+    padding: 4px;
+    color: $white;
+    font-size: 2.4rem;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__anchor {
+    display: inline-block;
+    padding: 4px;
+    font-size: 1.3rem;
+    @include text-link($white);
+  }
+
+  &__copy {
+    display: block;
+    color: $footer_txt;
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,115 @@
+@mixin a-buildingCard() {
+  overflow: hidden;
+  display: block;
+  box-sizing: border-box;
+  background: $white;
+  border: 1px solid $element_border;
+  border-radius: 6px;
+
+  &__anchor {
+    display: block;
+
+    &:hover {
+      .a-buildingCard__thumbImg {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__thumb {
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid $element_border;
+
+    &::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 78px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, #000);
+      content: "";
+      z-index: 1;
+    }
+
+    &Img {
+      width: 100%;
+      padding-top: 56.25%;
+      @include inline-background-image(cover);
+      transition: transform 0.2s linear;
+    }
+
+    &Ttl {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      left: 8px;
+      color: $white;
+      font-weight: 700;
+      font-size: 1.4rem;
+      z-index: 2;
+      line-height: 1.4;
+    }
+  }
+
+  &__list {
+    padding: 8px;
+    color: $text_secondary;
+    font-size: 1.1rem;
+
+    &Ttl {
+      display: none;
+    }
+
+    &Cnt {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    &Icon {
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+
+    &Txt {
+      line-height: 1.2;
+      @include text-skip;
+    }
+  }
+
+  &__action {
+    @include flex-align-items-center;
+
+    &Item {
+      width: 100%;
+    }
+
+    &Anchor {
+      @include flex-center;
+      padding: 12px 0;
+      width: 100%;
+      border-top: 1px solid $element_border;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &--fav {
+        @include interest-action($favorite_action, 26%, 24%);
+      }
+
+      &--dismiss {
+        @include interest-action($ignore_action, 60%, 56%);
+      }
+    }
+
+    &Icon {
+      margin-right: 6px;
+      font-size: 1.6rem;
+    }
+  }
+}

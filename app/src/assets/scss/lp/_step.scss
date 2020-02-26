@@ -1,0 +1,101 @@
+@mixin step() {
+  position: relative;
+  width: 100%;
+  background: url('~assets/images/lp/step_bg_pc.jpg') center center /cover no-repeat;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(39, 226, 255, 0.6) 0%, rgba(0, 76, 255, 0.6) 100%);
+    content: '';
+  }
+
+  &__cnt {
+    position: relative;
+    margin: 0 auto;
+    padding: 36px 0;
+    width: 1200px;
+    color: $white;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  &__ttl {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 2.4rem;
+  }
+
+  &__sub {
+    margin-bottom: 36px;
+  }
+
+  &__lists {
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
+  &__item {
+    margin: 0 60px;
+    width: 200px;
+
+    &Ttl {
+      margin-bottom: 12px;
+      width: 200px;
+      height: 200px;
+      text-indent: -9999px;
+
+      &--01 {
+        background: url('~assets/images/lp/step1.png') center center /contain no-repeat;
+      }
+
+      &--02 {
+        background: url('~assets/images/lp/step2.png') center center /contain no-repeat;
+      }
+
+      &--03 {
+        background: url('~assets/images/lp/step3.png') center center /contain no-repeat;
+      }
+    }
+
+    &Txt {
+      text-align: left;
+      line-height: 1.5;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    background: url('~assets/images/lp/step_bg_sp.jpg') center center /cover no-repeat;
+
+    &__ttl {
+      font-size: 2rem;
+    }
+
+    &__sub {
+      margin-bottom: 28px;
+    }
+
+    &__cnt {
+      padding: 36px 16px;
+      width: 100%;
+    }
+
+    &__lists {
+      display: block;
+    }
+
+    &__item {
+      margin: 0 0 20px 0;
+      width: auto;
+
+      &Ttl {
+        margin: 0 auto 12px;
+        width: 160px;
+        height: 160px;
+      }
+    }
+  }
+}

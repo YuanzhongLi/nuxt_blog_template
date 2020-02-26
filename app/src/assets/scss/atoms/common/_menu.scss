@@ -1,0 +1,62 @@
+@mixin a-menu() {
+  @include flex-align-items-center;
+
+  &__icon {
+    position: relative;
+    @include inline-flex-center;
+    margin: 0 12px 0 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 24px;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    &Cnt {
+      position: absolute;
+      top: 19px;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: $side_nav_txt;
+      border-radius: 1px;
+      transition: 0.3s;
+
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background: $side_nav_txt;
+        content: '';
+        transition: 0.3s;
+      }
+
+      &::before {
+        top: -6px;
+      }
+
+      &::after {
+        bottom: -6px;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 100px;
+    height: 28px;
+    background: url('~assets/images/logo_rec_black.svg') center center /contain no-repeat $white;
+    text-indent: -9999px;
+    cursor: pointer;
+
+    &--notLogin {
+      margin-left: 16px;
+    }
+  }
+}

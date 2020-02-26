@@ -1,0 +1,96 @@
+@mixin a-filePreview() {
+  margin: 16px;
+
+  &__head {
+    @include flex-align-items-center;
+    margin: 24px 0 16px;
+
+    &Ttl {
+      flex: 1;
+      font-weight: bold;
+      font-size: 2rem;
+      color: $text_primary;
+    }
+
+    &Nav {
+      @include inline-flex-align-items-center;
+
+      &Anchor {
+        @include inline-flex-center;
+        width: 20px;
+        height: 20px;
+        color: $text_link;
+        font-size: 2rem;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+          color: $text_primary;
+        }
+      }
+
+      &Num {
+        display: inline-block;
+        height: 20px;
+        margin: 0 16px;
+        font-size: 1.6rem;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    padding: 24px;
+    width: 100%;
+    background: $white;
+    border: 1px solid $element_border;
+    border-radius: 8px;
+
+    &Img {
+      width: 70%;
+      height: auto;
+      vertical-align: middle;
+      border: 1px solid $element_border;
+    }
+
+    &Info {
+      position: sticky;
+      top: 16px;
+      margin-left: 16px;
+      padding: 12px;
+      width: 30%;
+      background: $light_bg;
+      border: 1px solid $element_border;
+      border-radius: 2px;
+
+      &Ttl {
+        @include flex-align-items-center;
+        margin-bottom: 16px;
+        color: $text_primary;
+        font-weight: bold;
+        font-size: 1.4rem;
+
+        &Icon {
+          margin-right: 8px;
+        }
+      }
+
+      &Item {
+        & + .a-filePreview__bodyInfoItem {
+          margin-top: 20px;
+        }
+
+        &Ttl {
+          margin-bottom: 6px;
+          color: $text_secondary;
+          font-size: 1.1rem;
+        }
+
+        &Txt {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

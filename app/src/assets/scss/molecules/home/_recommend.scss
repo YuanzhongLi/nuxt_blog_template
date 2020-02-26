@@ -1,0 +1,25 @@
+@mixin m-recommend() {
+  &__item {
+    & + .m-recommend__item {
+      border-top: 1px solid $element_border;
+    }
+  }
+
+  &__head {
+    @include flex-align-items-center;
+    justify-content: space-between;
+    padding: 16px 8px 4px;
+    background: $white;
+
+    &Ttl {
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    &Anchor {
+      font-size: 1.3rem;
+      @include text-link($text_link);
+    }
+  }
+}

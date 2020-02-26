@@ -1,0 +1,35 @@
+@mixin a-checkArea() {
+  &__cnt {
+    margin-top: 16px;
+  }
+  &__ttl {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  &__list {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    flex-shrink: 0;
+    margin: 2px 0;
+    width: 20%;
+    padding-right: 8px;
+    box-sizing: border-box;
+  }
+  &--editCondition {
+    .a-checkArea {
+      &__item {
+        width: 50%;
+      }
+    }
+  }
+  &--sp {
+    .a-checkArea {
+      &__item {
+        width: 50%;
+      }
+    }
+  }
+}

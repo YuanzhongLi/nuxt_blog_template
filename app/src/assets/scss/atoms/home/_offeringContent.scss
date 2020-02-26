@@ -1,0 +1,83 @@
+@mixin a-offeringContent() {
+  padding: 12px;
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+
+    &Cnt {
+      margin: 0 8px;
+      flex: 1;
+      overflow: hidden;
+    }
+  }
+
+  &__status {
+    display: inline-block;
+    margin-top: 8px;
+    text-align: center;
+    color: $white;
+    border-radius: 2px;
+    padding: 4px 8px;
+    min-width: 68px;
+    font-weight: bold;
+    font-size: 1rem;
+
+    &--match {
+      background: $key_color;
+    }
+
+    &--new {
+      background: $input_icon;
+    }
+  }
+
+  &__thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    @include inline-background-image(cover);
+  }
+
+  &__agentCompany {
+    color: $text_secondary;
+    font-size: 1.2rem;
+    @include text-skip;
+  }
+
+  &__agentName {
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    @include text-skip;
+  }
+
+  &__time {
+    display: inline-block;
+    margin-top: 8px;
+    color: $text_secondary;
+    font-size: 1.2rem;
+  }
+
+  &__download {
+    display: inline-block;
+    border: 1px solid $element_border;
+    border-radius: calc((1.3rem + 24px) / 2);
+    padding: 12px;
+    background: $white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    @include text-link($text_link);
+
+    &Icon {
+      margin-right: 4px;
+    }
+  }
+
+  &__message {
+    margin-top: 12px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+}

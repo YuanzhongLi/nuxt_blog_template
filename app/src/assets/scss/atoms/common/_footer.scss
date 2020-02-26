@@ -1,0 +1,28 @@
+@mixin a-footer() {
+  text-align: center;
+  color: $text_secondary;
+  font-size: 1.2rem;
+
+  &__list {
+    display: inline-flex;
+  }
+
+  &__item {
+    & + .a-footer__item {
+      &::before {
+        display: inline-block;
+        margin: 0 8px;
+        content: '-';
+      }
+    }
+  }
+
+  &__anchor {
+    display: inline-block;
+    @include text-link($text_secondary);
+  }
+
+  &__copy {
+    margin-top: 8px;
+  }
+}

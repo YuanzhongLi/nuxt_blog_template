@@ -1,0 +1,27 @@
+@mixin m-fileList() {
+  background: $white;
+
+  &__head {
+    @include flex-align-items-center;
+    position: sticky;
+    top: 0;
+    background: $table_bg;
+    padding: 0 12px;
+    height: 64px;
+    z-index: 3;
+    box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.05);
+
+    &Ttl {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__body {
+    &Item {
+      & + .m-fileList__bodyItem {
+        border-top: 1px solid $element_border;
+      }
+    }
+  }
+}

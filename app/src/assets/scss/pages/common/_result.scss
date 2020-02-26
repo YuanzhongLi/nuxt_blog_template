@@ -1,0 +1,141 @@
+@mixin p-result() {
+  margin: 0 auto;
+  width: 1024px;
+  &__breadcrumb {
+    margin-top: 16px;
+  }
+  &__cnt {
+    margin-top: 16px;
+    padding-bottom: 48px;
+    display: flex;
+    align-items: flex-start;
+  }
+  &__aside {
+    width: 232px;
+  }
+  &__main {
+    flex: 1;
+    box-sizing: border-box;
+    margin-left: 16px;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+    background: $white;
+    &Head {
+      padding: 16px 12px 0;
+      @include flex-align-items-center;
+      justify-content: space-between;
+      &Ttl {
+        font-weight: bold;
+        font-size: 1.8rem;
+      }
+    }
+    &Body {
+      &Item {
+        padding: 12px;
+        & + .p-result__mainBodyItem {
+          border-top: 1px solid $element_border;
+        }
+        &Table {
+          margin-top: 12px;
+        }
+      }
+    }
+    &Nav {
+      padding: 16px 0;
+      border-top: 1px solid $element_border;
+      text-align: center;
+    }
+  }
+  &--login {
+    margin: 16px;
+    width: auto;
+  }
+  &__recommend {
+    margin-left: 16px;
+    width: 360px;
+    &Cnt {
+      border-radius: 2px;
+      border: 1px solid $element_border;
+      background: $white;
+    }
+    &Head {
+      @include flex-align-items-center;
+      justify-content: space-between;
+      margin: 16px 8px 4px;
+
+      &Ttl {
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+
+      &Anchor {
+        @include text-link($text_link);
+        font-size: 1.3rem;
+      }
+    }
+    &Footer {
+      margin-top: 12px;
+    }
+  }
+  &--sp {
+    background: $white;
+    &__head {
+      @include flex-align-items-center;
+      justify-content: space-between;
+      padding: 12px 12px 4px;
+      &Ttl {
+        font-weight: bold;
+        font-size: 1.6rem;
+      }
+    }
+    &__search {
+      @include flex-align-items-center;
+      justify-content: center;
+      position: fixed;
+      right: 8px;
+      bottom: 8px;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      border-radius: 36px;
+      background: $btn_action_primary;
+      color: $white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+      &Icon {
+        display: block;
+        font-size: 2.2rem;
+        margin-bottom: 4px;
+      }
+    }
+    &__item {
+      padding: 12px;
+      & + .p-result--sp__item {
+        border-top: 1px solid $element_border;
+      }
+      &Asking {
+        margin-top: 12px;
+        &Item {
+          & + .p-result--sp__itemAskingItem {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+    &__footer {
+      margin-top: 12px;
+      text-align: right;
+      &More {
+        @include inline-flex-align-items-center;
+        color: $text_link;
+        font-weight: bold;
+        font-size: 1.4rem;
+        &Icon {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}

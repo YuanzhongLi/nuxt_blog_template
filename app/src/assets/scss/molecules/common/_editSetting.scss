@@ -1,0 +1,49 @@
+@mixin m-editSetting() {
+  &__list {
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    &--flex {
+      display: flex;
+
+      &Item {
+        flex: 1;
+        & + .m-editSetting__item--flexItem {
+          margin-left: 12px;
+        }
+      }
+    }
+
+    & + .m-editSetting__item {
+      margin-top: 12px;
+    }
+
+    &Label {
+      margin-bottom: 8px;
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__check {
+    & + .m-editSetting__check {
+      display: block;
+      margin-top: 8px;
+    }
+  }
+
+  &__save {
+    padding: 16px 0;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    text-align: center;
+    @include action-btn($btn_action_primary, $white);
+  }
+  &__tag {
+    @include tag;
+  }
+}

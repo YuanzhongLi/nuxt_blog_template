@@ -1,0 +1,79 @@
+@mixin m-popularArea() {
+  &__ttl {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  &__list {
+    margin-top: 12px;
+    font-size: 0;
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 159px;
+    height: 200px;
+    margin-right: 14px;
+    white-space: normal;
+  }
+  &__anchor {
+    width: 159px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid $element_border;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    &::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 64px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, #000);
+      content: '';
+    }
+    &:hover {
+      .m-popularArea__thumb {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__thumb {
+    width: 159px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s linear;
+  }
+  &__name {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    @include text-skip;
+  }
+  &--sp {
+    .m-popularArea {
+      &__ttl {
+        margin: 0 8px;
+      }
+      &__item {
+        &:first-child {
+          margin-left: 8px;
+        }
+        margin-right: 8px;
+      }
+    }
+  }
+}

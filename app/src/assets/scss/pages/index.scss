@@ -1,0 +1,37 @@
+/* ---------------------------------
+  COMMON
+--------------------------------- */
+@import 'common/login';
+@import 'common/newpassword';
+@import 'common/signup';
+@import 'common/message';
+@import 'common/changeEmail';
+@import 'common/changePassword';
+@import 'common/terms';
+@import 'common/article';
+@import 'common/articleList';
+@import 'common/faq';
+@import 'common/office';
+@import 'common/area';
+@import 'common/result';
+@import 'common/info';
+
+/* ---------------------------------
+  ADMIN
+--------------------------------- */
+@import 'admin/main';
+
+/* ---------------------------------
+  AGENT
+--------------------------------- */
+@import 'agent/list';
+@import 'agent/offer';
+
+/* ---------------------------------
+  TENANT
+--------------------------------- */
+@import 'tenant/emap';
+@import 'tenant/file';
+@import 'tenant/home';
+@import 'tenant/buildingDetail';
+@import 'tenant/mybuildings';

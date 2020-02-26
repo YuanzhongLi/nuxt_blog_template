@@ -1,0 +1,27 @@
+@mixin a-accountInfoLevel() {
+  @include flex-align-items-center;
+
+  &__progress {
+    overflow: hidden;
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: $element_border;
+  }
+
+  &__completion {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: $accent_color2;
+  }
+
+  &__txt {
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

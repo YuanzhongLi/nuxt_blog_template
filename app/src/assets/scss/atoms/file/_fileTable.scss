@@ -1,0 +1,71 @@
+@mixin a-fileTable() {
+  position: relative;
+  width: 100%;
+  font-size: 1.3rem;
+
+  &__ttl {
+    position: sticky;
+    top: 0;
+    padding: 16px 8px;
+    background: $white;
+    color: $text_secondary;
+    font-weight: bold;
+    vertical-align: middle;
+    box-shadow: 0 2px 0 0 rgba(228, 233, 239, 1);
+  }
+
+  &__line {
+    border-bottom: 1px solid $element_border;
+  }
+
+  &__body {
+    padding: 8px;
+    vertical-align: middle;
+
+    &Thumb {
+      margin-right: 8px;
+      width: 48px;
+      height: 48px;
+      border-radius: 2px;
+      @include inline-background-image(cover);
+    }
+
+    &Label {
+      flex: 1;
+      line-height: 1.5;
+      @include multi-text-skip(2);
+    }
+
+    &--cnt {
+      width: 100%;
+      @include inline-flex-align-items-center;
+    }
+
+    &--time {
+      width: 144px;
+      text-align: center;
+    }
+
+    &--delete {
+      width: 48px;
+      text-align: center;
+    }
+
+    &Anchor {
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      @include inline-flex-center;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        background: $cell_hover;
+      }
+
+      &Icon {
+        color: $text_secondary;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@mixin m-otherBuildingSwiper() {
+  margin: 0 auto;
+  padding: 24px 0;
+  width: 1024px;
+
+  &__ttl {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @include flex-center;
+    width: 32px;
+    height: 60px;
+    border: 1px solid $element_border;
+    border-radius: 4px;
+    background: $white;
+    cursor: pointer;
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+
+    &Icon {
+      color: $ignore_action;
+      font-size: 1.6rem;
+    }
+
+    &--single {
+      &--prev {
+        left: 8px;
+      }
+
+      &--next {
+        right: 8px;
+      }
+    }
+
+    &--multi {
+      &--prev {
+        left: -16px;
+      }
+
+      &--next {
+        right: -16px;
+      }
+    }
+  }
+
+  &--sp {
+    margin: auto;
+    width: 100%;
+
+    .m-otherBuildingSwiper {
+      &__ttl {
+        margin: 0 0 12px 12px;
+        font-weight: bold;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

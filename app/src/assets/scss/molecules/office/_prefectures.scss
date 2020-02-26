@@ -1,0 +1,30 @@
+@mixin m-prefectures() {
+  &__ttl {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  &__list {
+    margin-top: 12px;
+  }
+  &__item {
+    & + .m-prefectures__item {
+      margin-top: 24px;
+    }
+    &Ttl {
+      font-size: 1.6rem;
+    }
+  }
+  &__area {
+    margin-top: 12px;
+    &Item {
+      display: inline-block;
+      & + .m-prefectures__areaItem {
+        margin-left: 16px;
+      }
+    }
+    &Anchor {
+      @include text-link($text_link);
+      font-size: 1.4rem;
+    }
+  }
+}

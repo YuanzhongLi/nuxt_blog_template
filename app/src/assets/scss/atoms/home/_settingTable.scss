@@ -1,0 +1,72 @@
+@mixin a-settingTable() {
+  &__ttl {
+    margin-bottom: 6px;
+    color: $text_secondary;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  &__txt {
+    margin-bottom: 20px;
+    color: $text_primary;
+    font-size: 1.3rem;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &__otherItem {
+      white-space: pre-line;
+    }
+  }
+
+  &__list {
+    &Item {
+      &::before {
+        content: '・';
+      }
+
+      & + .a-settingTable__listItem {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &--sp {
+    .a-settingTable {
+      &__station {
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        &Item {
+          display: inline-block;
+          padding: 6px;
+          border-radius: calc((1.2rem + 12px) / 2);
+          background: $input_icon;
+          color: $white;
+          font-size: 1.2rem;
+          line-height: 1;
+
+          &::before {
+            content: '';
+          }
+
+          & + .a-settingTable__stationItem {
+            margin: 0 0 0 4px;
+          }
+        }
+      }
+
+      &__txt {
+        @include text-skip;
+
+        &__station {
+          overflow-x: scroll;
+        }
+      }
+    }
+  }
+}

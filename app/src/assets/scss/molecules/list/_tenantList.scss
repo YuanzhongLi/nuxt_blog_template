@@ -1,0 +1,7 @@
+@mixin m-tenantList() {
+  &__item {
+    & + .m-tenantList__item {
+      margin-top: 16px;
+    }
+  }
+}

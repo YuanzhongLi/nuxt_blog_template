@@ -1,0 +1,158 @@
+@mixin a-file() {
+  display: inline-flex;
+  align-items: flex-end;
+
+  &__cnt {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__thumb {
+    flex-shrink: 0;
+    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    @include inline-background-image(cover);
+  }
+
+  &__wrap {
+    overflow: hidden;
+    background: $white;
+    border: 1px solid $element_border;
+    border-radius: 12px;
+    flex: 1;
+  }
+
+  &__anchor {
+    display: block;
+    padding: 16px;
+    position: relative;
+    color: $text_primary;
+
+    &Tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 8px;
+      background: $key_color;
+      border-radius: 10px;
+      color: $white;
+      line-height: 1;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    &Cnt {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &Icon {
+      margin-right: 4px;
+    }
+
+    &Txt {
+      flex: 1;
+    }
+
+    &:hover {
+      .a-file__hover {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__action {
+    @include flex-align-items-center;
+    border-radius: 0 0 4px 4px;
+
+    &WideItem {
+      position: relative;
+      width: 100%;
+    }
+
+    &Item {
+      position: relative;
+      width: 50%;
+    }
+
+    &Anchor {
+      @include flex-center;
+      padding: 12px 20px;
+      border-top: 1px solid $element_border;
+      font-weight: bold;
+      font-size: 1.2rem;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &--fav {
+        @include interest-action($favorite_action, 26%, 24%);
+        color: $favorite_action;
+        border-radius: 0 0 0 5px;
+
+        &:hover {
+          & + .a-fileCard__actionNotice {
+            opacity: 1;
+            top: 34px;
+          }
+        }
+      }
+
+      &--dismiss {
+        @include interest-action($ignore_action, 60%, 56%);
+        border-radius: 0 0 5px 0;
+
+        &:hover {
+          & + .a-fileCard__actionNotice {
+            opacity: 1;
+            top: 34px;
+          }
+        }
+      }
+    }
+
+    &Icon {
+      margin-right: 4px;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__hover {
+    visibility: visible;
+    @include flex-center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(31, 44, 64, 0.8);
+    color: $white;
+    transition: all 0.2s ease-in;
+    text-align: center;
+
+    &Icon {
+      margin-right: 8px;
+      font-size: 2rem;
+    }
+
+    &Txt {
+      font-weight: bold;
+    }
+  }
+
+  &__time {
+    color: $text_secondary;
+    font-size: 1.2rem;
+
+    &--sender {
+      margin: 0 0 4px 8px;
+    }
+
+    &--receiver {
+      margin: 0 8px 4px 0;
+    }
+  }
+}

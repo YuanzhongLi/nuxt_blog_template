@@ -1,0 +1,43 @@
+@mixin a-offerListTable {
+  font-size: 1.3rem;
+  width: 100%;
+
+  &__head,
+  &__body {
+    padding: 12px 8px;
+    vertical-align: middle;
+    line-height: 1.5;
+    border: 1px solid $table_border;
+  }
+
+  &__head {
+    width: 100px;
+    background: $table_bg;
+    color: $table_txt;
+    font-weight: bold;
+    text-align: left;
+    &--center {
+      text-align: center;
+    }
+    &--label {
+      position: sticky;
+      top: 60px;
+    }
+  }
+  &__body {
+    background: $white;
+    text-align: left;
+    &Item {
+      &::before {
+        display: inline-block;
+        content: '・';
+      }
+    }
+  }
+  &__anchor {
+    color: $text_link;
+    &Icon {
+      margin-right: 4px;
+    }
+  }
+}

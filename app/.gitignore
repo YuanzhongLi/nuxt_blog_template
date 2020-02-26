@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
-/logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -47,6 +47,9 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Optional stylelint cache
+.stylelintcache
+
 # Optional REPL history
 .node_repl_history
 
@@ -77,17 +80,13 @@ dist
 # Serverless directories
 .serverless
 
-# IDE / Editor
+# IDE
 .idea
 
 # Service worker
 sw.*
 
-# macOS
 .DS_Store
-
-# Vim swap files
-*.swp
 
 # local meta.js
 config/local/meta.js

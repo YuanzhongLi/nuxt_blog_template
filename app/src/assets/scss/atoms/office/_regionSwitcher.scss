@@ -1,0 +1,38 @@
+@mixin a-regionSwitcher() {
+  &__list {
+    overflow-x: scroll;
+    display: flex;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__item {
+    & + .a-regionSwitcher__item {
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        bottom: 2px;
+        width: 1px;
+        background: $element_border;
+        content: '';
+      }
+    }
+  }
+  &__anchor {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    @include text-link($text_link);
+    &.is-active {
+      color: $text_primary;
+      font-weight: bold;
+      cursor: default;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

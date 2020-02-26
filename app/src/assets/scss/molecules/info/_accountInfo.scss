@@ -1,0 +1,136 @@
+@mixin m-accountInfo() {
+  margin: 96px auto;
+  width: 70%;
+
+  &__ttl {
+    margin-bottom: 40px;
+    color: $text_primary;
+    font-weight: bold;
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__thumb {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin-right: 16px;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    text-align: center;
+    cursor: pointer;
+
+    &Input {
+      display: none;
+    }
+  }
+
+  &__account {
+    flex: 1;
+    padding-right: 24px;
+    border-right: 1px solid $element_border;
+
+    &Item {
+      & + .m-accountInfo__accountItem {
+        margin-top: 24px;
+      }
+
+      &--flex {
+        display: flex;
+
+        &Cnt {
+          flex: 1;
+
+          & + .m-accountInfo__accountItem--flexCnt {
+            margin-left: 12px;
+          }
+        }
+      }
+
+      &Submit {
+        display: inline-block;
+        padding: 16px 48px;
+        border: none;
+        border-radius: 2px;
+        font-size: 1.4rem;
+        text-align: center;
+        @include action-btn($btn_action_primary, $white);
+
+        &.is-disabled {
+          background: $btn_action_disabled;
+          color: $text_disabled;
+          cursor: default;
+
+          &:hover {
+            background: $btn_action_disabled;
+            color: $text_disabled;
+          }
+        }
+      }
+    }
+  }
+
+  &__change {
+    padding-left: 24px;
+
+    &Item {
+      & + .m-accountInfo__changeItem {
+        margin-top: 24px;
+      }
+    }
+
+    &Anchor {
+      display: block;
+      padding: 16px 32px;
+      border-radius: 4px;
+      border: 1px solid $element_border;
+      background: $btn_action_tertiary;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-align: center;
+      @include text-link($text_link);
+
+      &Icon {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &--sp {
+    margin: 48px 16px;
+    width: auto;
+
+    .m-accountInfo {
+      &__ttl {
+        margin-bottom: 24px;
+      }
+
+      &__thumb {
+        margin: 0 auto 24px;
+      }
+
+      &__account {
+        padding: 0 0 48px 0;
+        border-right: none;
+        border-bottom: 1px solid $element_border;
+
+        &Item {
+          &--submit {
+            text-align: center;
+          }
+        }
+      }
+
+      &__change {
+        padding: 48px 0 0 0;
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@mixin m-sendBox() {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  background: $white;
+  box-shadow: 0 -4px 3px -3px rgba(0, 0, 0, 0.05);
+
+  &--start {
+    justify-content: center;
+
+    &Btn {
+      display: inline-block;
+      height: 50px;
+      padding: 0 80px;
+      line-height: 50px;
+      border-radius: 2px;
+      font-size: 1.4rem;
+      @include action-btn($btn_action_primary, $white);
+    }
+  }
+
+  &__btn {
+    margin: 4px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 48px;
+    color: lighten($text_secondary, 25%);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      color: $text_secondary;
+    }
+
+    &Icon {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__textarea {
+    flex: 1;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+    margin: 0 8px;
+    padding: 0 8px;
+    min-height: 48px;
+    max-height: 160px;
+    background-color: $white;
+    line-height: 1.5;
+    resize: none;
+    font-size: 1.4rem;
+  }
+
+  &__send {
+    padding: 0 16px;
+    min-height: 48px;
+    font-size: 1.4rem;
+    line-height: 48px;
+    @include action-btn($btn_action_primary, $white);
+
+    &.is-disabled {
+      background: $btn_action_disabled;
+      color: $text_disabled;
+    }
+
+    &Icon {
+      margin-right: 8px;
+    }
+  }
+}

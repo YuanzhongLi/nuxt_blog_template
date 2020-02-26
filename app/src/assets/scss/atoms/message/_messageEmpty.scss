@@ -1,0 +1,13 @@
+@mixin a-messageEmpty() {
+  text-align: center;
+  color: $text_secondary;
+
+  &__icon {
+    margin-bottom: 12px;
+    font-size: 6rem;
+  }
+
+  &__txt {
+    font-size: 1.3rem;
+  }
+}

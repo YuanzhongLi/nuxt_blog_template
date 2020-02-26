@@ -1,0 +1,30 @@
+@mixin a-emapSwitcher() {
+  &__list {
+    display: flex;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+  }
+  &__item {
+    width: 100%;
+    flex: 1;
+    & + .a-emapSwitcher__item {
+      border-left: 1px solid $element_border;
+    }
+  }
+  &__anchor {
+    display: block;
+    padding: 12px 0;
+    font-size: 1.3rem;
+    text-align: center;
+    @include text-link($text_link);
+    &.is-active {
+      color: $text_primary;
+      font-weight: bold;
+      cursor: default;
+      background: $light_bg;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+@mixin m-resultAside() {
+  background: $white;
+  border: 1px solid $element_border;
+  border-radius: 2px;
+  &__emap {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    &:hover {
+      .m-resultAside__emapImg {
+        transform: scale(1.1);
+      }
+    }
+    &Img {
+      width: 100%;
+      background: url('~assets/images/office/e_map.png') center center /cover no-repeat;
+      transition: transform 0.2s linear;
+      &::before {
+        display: inline-block;
+        content: '';
+        padding-top: 52.65%;
+      }
+    }
+    &Txt {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 6px 8px;
+      background: $white;
+      color: $text_link;
+      font-size: 1.2rem;
+      font-weight: bold;
+      &Icon {
+        margin-right: 4px;
+      }
+    }
+  }
+  &__head {
+    border-top: 1px solid $element_border;
+    padding: 12px 8px;
+    &Ttl {
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.8rem;
+      @include text-skip;
+    }
+    &Num {
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+  &__body {
+    &Cnt {
+      padding: 12px 8px;
+      border-top: 1px solid $element_border;
+      &Ttl {
+        color: $text_secondary;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      &Label {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+    }
+    &Tag {
+      @include tag;
+    }
+    &ChangeArea {
+      margin-top: 8px;
+      display: flex;
+      font-size: 1.3rem;
+      &Input {
+        width: 100%;
+        flex: 1;
+        border: 1px solid $element_border;
+        border-radius: 2px;
+        padding: 8px 4px;
+        box-sizing: border-box;
+        @include placeholder-color($input_placeholder);
+      }
+      &Btn {
+        @include inline-flex-center;
+        margin-left: 4px;
+        padding: 0 8px;
+        border-radius: 2px;
+        white-space: nowrap;
+        @include action-btn($btn_action_primary, $white);
+        &Icon {
+          margin-right: 4px;
+        }
+      }
+    }
+    &List {
+      margin-top: 12px;
+      &Item {
+        &--range {
+          padding-bottom: 16px;
+        }
+        & + .m-resultAside__bodyListItem {
+          margin-top: 16px;
+        }
+        &Ttl {
+          color: $text_secondary;
+          font-weight: bold;
+          font-size: 1.4rem;
+        }
+        &Check {
+          margin-top: 8px;
+        }
+        &Option {
+          & + .m-resultAside__bodyListItemOption {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+  &__search {
+    @include flex-center;
+    margin: 8px;
+    padding: 16px 0;
+    @include action-btn($btn_action_primary, $white);
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    &Icon {
+      margin-right: 4px;
+    }
+  }
+}

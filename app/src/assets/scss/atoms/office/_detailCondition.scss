@@ -1,0 +1,63 @@
+@mixin a-detailCondition() {
+  &__ttl {
+    margin-top: 16px;
+    color: $text_primary;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  &__tab {
+    margin-top: 8px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    & + .a-detailCondition__item {
+      margin-left: 16px;
+    }
+  }
+  &__conditions {
+    position: relative;
+    margin-top: 12px;
+    &Item {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+  &__range {
+    padding-bottom: 16px;
+    width: 50%;
+    & + .a-detailCondition__range {
+      margin-left: 16px;
+    }
+    &Input {
+      @include inline-flex-align-items-center;
+      width: 100%;
+      &Wrap {
+        padding: 4px;
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        border: 1px solid $element_border;
+        border-radius: 2px;
+        background: $white;
+      }
+      &Box {
+        width: 100%;
+        border: none;
+        font-size: 1.4rem;
+        text-align: right;
+      }
+      &Txt {
+        margin: 0 12px;
+        text-align: center;
+      }
+      &Unit {
+        margin-left: 4px;
+        color: $text_secondary;
+        font-size: 1.2rem;
+        white-space: nowrap;
+      }
+    }
+  }
+}

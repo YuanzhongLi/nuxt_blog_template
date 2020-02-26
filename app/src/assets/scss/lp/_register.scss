@@ -1,0 +1,46 @@
+@mixin register() {
+  padding: 48px 0;
+  background: url(~assets/images/lp/register_bg.jpg) center center /cover no-repeat;
+  text-align: center;
+  color: $white;
+
+  &__ttl {
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+  }
+
+  &__txt {
+    margin-bottom: 40px;
+    font-size: 1.4rem;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 20px 40px;
+    background: $white;
+    border-radius: 4px;
+    color: $footer_bg;
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__ttl {
+      margin-bottom: 16px;
+      font-weight: bold;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    &__txt {
+      margin-bottom: 32px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@mixin a-accountInfo() {
+  @include flex-align-items-center;
+
+  &__thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    @include inline-background-image(cover);
+  }
+
+  &__cnt {
+    margin-left: 8px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__company {
+    display: block;
+    margin-bottom: 4px;
+    color: $text_secondary;
+    font-size: 1.1rem;
+    @include text-skip;
+  }
+
+  &__name {
+    color: $text_primary;
+    font-size: 1.4rem;
+    @include text-skip;
+  }
+}

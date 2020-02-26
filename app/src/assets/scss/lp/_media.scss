@@ -1,0 +1,59 @@
+@mixin media() {
+  padding: 36px 0 48px;
+  background: $white;
+  text-align: center;
+
+  &__ttl {
+    margin-bottom: 36px;
+    color: $lp_ttl;
+    font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-align: center;
+
+    &::before {
+      display: inline-block;
+      margin-bottom: 4px;
+      width: 52px;
+      height: 14px;
+      background: url(~assets/images/lp/media.png) center center /contain no-repeat;
+      content: '';
+    }
+  }
+
+  &__list {
+    @include inline-flex-align-items-center;
+  }
+
+  &__item {
+    & + .media__item {
+      margin-left: 32px;
+    }
+
+    &Img {
+      vertical-align: middle;
+
+      &--01 {
+        width: 193px;
+        height: 27px;
+      }
+
+      &--02 {
+        width: 226px;
+        height: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__list {
+      display: block;
+    }
+
+    &__item {
+      & + .media__item {
+        margin: 40px 0 0;
+      }
+    }
+  }
+}

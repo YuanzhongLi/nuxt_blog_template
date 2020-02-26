@@ -1,0 +1,112 @@
+@mixin p-faq() {
+  background: $white;
+
+  &__head {
+    position: relative;
+    background: url('~assets/images/faq.jpg') center center /cover no-repeat;
+    text-align: center;
+
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(31, 48, 65, 0.4);
+      content: '';
+    }
+
+    &Ttl {
+      position: relative;
+      z-index: 2;
+      padding: 96px 0;
+      font-weight: bold;
+      font-size: 4rem;
+      color: $white;
+    }
+
+    &Sub {
+      margin-top: 12px;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-bottom: 96px;
+    width: 1024px;
+  }
+
+  &__item {
+    margin-top: 40px;
+    padding: 0 32px;
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  &__question {
+    @include flex-align-items-center;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+    &::before {
+      display: inline-block;
+      margin-right: 8px;
+      content: 'Q.';
+      color: $faq_q;
+      font-size: 3.2rem;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+  }
+
+  &__answer {
+    display: flex;
+    align-self: flex-start;
+    margin-top: 16px;
+
+    &::before {
+      display: inline-block;
+      margin-right: 8px;
+      content: 'A.';
+      color: $faq_a;
+      font-weight: bold;
+      font-size: 3.2rem;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    /deep/ {
+      div {
+        margin-top: 8px;
+      }
+
+      p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  &--sp {
+    .p-faq {
+      &__list {
+        display: block;
+        margin: inherit;
+        width: 100%;
+      }
+
+      &__item {
+        margin: 0 16px;
+        padding: 32px 0;
+        width: auto;
+
+        & + .p-faq__item {
+          border-top: 1px solid $element_border;
+        }
+      }
+    }
+  }
+}

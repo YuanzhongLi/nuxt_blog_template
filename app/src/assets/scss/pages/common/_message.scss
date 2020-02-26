@@ -1,0 +1,60 @@
+@mixin p-message() {
+  position: relative;
+  display: flex;
+  height: 100%;
+
+  &__inbox {
+    width: 308px;
+    height: 100%;
+    overflow-y: scroll;
+    background: $white;
+    border-right: 1px solid $element_border;
+  }
+
+  &__cnt {
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    flex: 1;
+
+    &--empty {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &Chat {
+      flex: 1;
+      width: 80%;
+      height: 100%;
+      overflow-y: scroll;
+
+      &Head {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+      }
+
+      &Stream {
+        overflow-y: scroll;
+        padding: 16px;
+        height: calc(100% - 130px); // 130 = 64 + 66 (headerHeight + sendBoxHeight)
+      }
+
+      &Send {
+        position: sticky;
+        bottom: 0;
+        z-index: 3;
+      }
+    }
+
+    &File {
+      overflow-y: scroll;
+      width: 20%;
+      height: 100%;
+      border-left: 1px solid $element_border;
+    }
+  }
+  &--sp {
+    background: $white;
+  }
+}

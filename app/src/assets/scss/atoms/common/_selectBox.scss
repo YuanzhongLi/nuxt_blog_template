@@ -1,0 +1,50 @@
+@mixin a-selectBox() {
+  padding: 4px 8px;
+  background: $white;
+  border: 1px solid $element_border;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+
+  &__label {
+    color: $text_secondary;
+    font-size: 1.1rem;
+  }
+
+  &__required {
+    margin-left: 4px;
+    color: $text_required;
+  }
+
+  &__select {
+    padding-right: 16px;
+    width: 100%;
+    height: 32px;
+    border: none;
+    background: $white;
+    appearance: none;
+    border-radius: 0;
+    outline: none;
+    font-size: 1.3rem;
+  }
+
+  &__icon {
+    margin-right: 8px;
+    color: $input_icon;
+    font-size: 1.4rem;
+  }
+
+  &__flex {
+    position: relative;
+    @include flex-align-items-center;
+
+    &Icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      line-height: 32px;
+      font-size: 1.6rem;
+    }
+  }
+}

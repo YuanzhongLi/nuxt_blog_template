@@ -1,0 +1,94 @@
+@mixin a-articleContent() {
+  padding: 12px;
+
+  &__thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+    background: url('~assets/images/home/cms_thumb.png') center /contain no-repeat;
+  }
+
+  &__info {
+    @include flex-align-items-center;
+    flex: 1;
+    overflow: hidden;
+
+    &Cnt {
+      margin-left: 8px;
+      flex: 1;
+    }
+
+    &Ttl {
+      color: $text_secondary;
+      font-size: 1.2rem;
+      @include text-skip;
+    }
+
+    &Name {
+      margin-top: 6px;
+      font-weight: bold;
+      font-size: 1.6rem;
+      @include text-skip;
+    }
+
+    &Time {
+      display: inline-block;
+      margin-top: 12px;
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__article {
+    display: flex;
+    margin-top: 16px;
+    padding: 8px;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+    background: $white;
+    color: $text_primary;
+    transition: all 0.3s ease-in;
+    &:hover {
+      background: $cell_hover;
+    }
+
+    &Thumb {
+      width: 96px;
+      height: 96px;
+      border-radius: 2px;
+      @include inline-background-image(cover);
+    }
+
+    &Info {
+      flex: 1;
+      margin-left: 8px;
+
+      &Ttl {
+        font-weight: bold;
+        font-size: 1.6rem;
+        line-height: 1.5;
+      }
+
+      &Summary {
+        /deep/ {
+          p {
+            margin-top: 12px;
+            color: $text_secondary;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            @include multi-text-skip(3);
+          }
+        }
+      }
+
+      &Time {
+        display: inline-block;
+        margin-top: 8px;
+        color: $text_secondary;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}

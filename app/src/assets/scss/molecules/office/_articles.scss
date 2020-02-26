@@ -1,0 +1,36 @@
+@mixin m-articles() {
+  &__head {
+    @include flex-align-items-center;
+    justify-content: space-between;
+    margin: 12px 8px;
+
+    &Ttl {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    &Anchor {
+      font-size: 1.3rem;
+      @include text-link($text_link);
+    }
+  }
+
+  &__list {
+    margin-top: 8px;
+  }
+
+  &__item {
+    & + .m-articles__item {
+      border-top: 1px solid $element_border;
+    }
+  }
+
+  &--sp {
+    padding: 16px 8px 0;
+    .m-articles {
+      &__head {
+        margin: 0 0 8px;
+      }
+    }
+  }
+}

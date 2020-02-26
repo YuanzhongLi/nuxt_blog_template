@@ -1,0 +1,93 @@
+@mixin a-buildingSwiperItem() {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+
+  &.is-favorite {
+    background: lighten($favorite_action, 26%);
+    .a-buildingSwiperItem__thumbActionItem--fav {
+      color: $favorite_action;
+    }
+  }
+
+  &__thumb {
+    margin-right: 8px;
+    text-align: center;
+
+    &Img {
+      width: 90px;
+      height: 90px;
+      @include inline-background-image(contain);
+    }
+
+    &Action {
+      display: inline-flex;
+      margin: 8px 4px 0;
+
+      &Item {
+        & + .a-buildingSwiperItem__thumbActionItem {
+          margin-left: 12px;
+        }
+      }
+
+      &Anchor {
+        display: inline-block;
+        font-size: 1.6rem;
+        text-align: center;
+
+        &--fav {
+          color: $favorite_action;
+          opacity: 0.4;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        &--dismiss {
+          color: $ignore_action;
+          opacity: 0.4;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    flex: 1;
+    width: calc(100% - 98px);
+
+    &Ttl {
+      @include multi-text-skip(2);
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      line-height: 1.3;
+      color: $text_link;
+    }
+
+    &Sub {
+      flex: 1;
+
+      &Item {
+        width: 100%;
+        color: $text_secondary;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        @include text-skip;
+
+        &Icon {
+          width: 12px;
+          text-align: center;
+        }
+
+        & + .a-buildingSwiperItem__infoSubItem {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}

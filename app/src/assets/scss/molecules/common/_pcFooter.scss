@@ -1,0 +1,51 @@
+@mixin m-pcFooter() {
+  padding: 40px 0 16px;
+  width: 100%;
+  background: $footer_bg;
+  text-align: center;
+  position: relative;
+
+  &__cnt {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    width: 1024px;
+    background: url('~assets/images/logo_rec_white.svg') left top /136px 39px no-repeat;
+  }
+
+  &__list {
+    @include flex-align-items-center;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__sns {
+    display: inline-block;
+    padding: 2px 6px;
+    color: $white;
+    font-size: 2.4rem;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__anchor {
+    display: inline-block;
+    padding: 2px 12px;
+    font-size: 1.3rem;
+    @include text-link($white);
+  }
+
+  &__copy {
+    display: block;
+    color: $footer_txt;
+    font-size: 1.3rem;
+  }
+}

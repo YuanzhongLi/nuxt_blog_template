@@ -1,0 +1,122 @@
+@mixin a-fileCell() {
+  @include flex-align-items-center;
+  padding: 12px;
+  transition: all 0.2s ease-in;
+  color: $text_link;
+
+  &:hover {
+    background: $cell_hover;
+  }
+
+  &__thumb {
+    width: 72px;
+    height: 72px;
+    @include flex-center;
+    margin-right: 8px;
+    box-sizing: border-box;
+    background: $light_bg;
+    color: $text_link;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    border: 1px solid $element_border;
+    border-radius: 4px;
+
+    &Icon {
+      margin-bottom: 4px;
+      font-size: 2rem;
+    }
+  }
+
+  &__info {
+    flex: 1;
+
+    &Ttl {
+      word-break: break-all;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    &Time {
+      word-break: break-all;
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__action {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    @include flex-align-items-center;
+    z-index: 1;
+
+    &Item {
+      & + .a-fileCell__actionItem {
+        margin-left: 8px;
+      }
+    }
+
+    &Anchor {
+      @include inline-flex-center;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+
+      &Icon {
+        &--fav {
+          color: $favorite_action;
+          font-size: 1.4rem;
+          opacity: 0.6;
+          transition: all 0.1s ease-in;
+        }
+
+        &--dismiss {
+          color: $ignore_action;
+          font-size: 1.6rem;
+          opacity: 0.6;
+          transition: all 0.1s ease-in;
+        }
+      }
+
+      &:hover {
+        .a-fileCell__actionAnchorIcon--fav {
+          opacity: 1;
+        }
+
+        .a-fileCell__actionAnchorIcon--dismiss {
+          opacity: 1;
+        }
+      }
+
+      &.is-active {
+        .a-fileCell__actionAnchorIcon--fav {
+          opacity: 1;
+        }
+
+        .a-fileCell__actionAnchorIcon--dismiss {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__time {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    z-index: 2;
+    color: $white;
+    padding: 8px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.6);
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    @include text-skip;
+  }
+}

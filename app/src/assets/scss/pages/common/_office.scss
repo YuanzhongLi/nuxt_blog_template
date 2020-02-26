@@ -1,0 +1,137 @@
+@mixin p-office() {
+  &--notLogin {
+    background: $white;
+    .p-office {
+      &__cnt {
+        margin: 0 auto;
+        width: 1024px;
+      }
+      &__recommend {
+        float: right;
+        width: 332px;
+        &Head {
+          @include flex-align-items-center;
+          justify-content: space-between;
+          margin-bottom: 8px;
+
+          &Ttl {
+            color: $text_primary;
+            font-weight: bold;
+            font-size: 1.8rem;
+          }
+
+          &Anchor {
+            font-size: 1.3rem;
+            @include text-link($text_link);
+          }
+        }
+      }
+    }
+  }
+  &--login {
+    .p-office {
+      &__cnt {
+        display: flex;
+        align-items: flex-start;
+        margin: 16px;
+        padding: 0;
+        &Main {
+          flex: 1;
+          overflow: hidden;
+          &Item {
+            border-radius: 2px;
+            border: 1px solid $element_border;
+            background: $white;
+            & + .p-office__cntMainItem {
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+      &__article {
+        padding: 12px;
+      }
+      &__aside {
+        margin-left: 16px;
+        width: 360px;
+      }
+      &__recommend {
+        border: 1px solid $element_border;
+        border-radius: 2px;
+        background: $white;
+        &Head {
+          @include flex-align-items-center;
+          justify-content: space-between;
+          margin: 16px 8px 4px;
+          &Ttl {
+            font-weight: bold;
+            font-size: 1.3rem;
+          }
+          &Anchor {
+            @include text-link($text_link);
+            font-size: 1.3rem;
+          }
+        }
+        &Footer {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  &__cnt {
+    padding: 32px 0;
+    & + .p-office__cnt {
+      margin-top: 24px;
+    }
+  }
+  &__section {
+    margin-top: 40px;
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  &__prefecture {
+    float: left;
+    width: 680px;
+  }
+  &__article {
+    margin-top: 40px;
+  }
+  &--sp {
+    background: $white;
+    &__search {
+      @include flex-center;
+      position: fixed;
+      right: 8px;
+      bottom: 8px;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      border-radius: 36px;
+      background: $btn_action_primary;
+      color: $white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+      &Icon {
+        display: block;
+        font-size: 2.2rem;
+        margin-bottom: 4px;
+      }
+    }
+    &__cnt {
+      &:last-of-type {
+        padding-bottom: 48px;
+      }
+      & + .p-office--sp__cnt {
+        margin-top: 32px;
+      }
+    }
+    &__recommend {
+      margin: 0 8px;
+    }
+  }
+}

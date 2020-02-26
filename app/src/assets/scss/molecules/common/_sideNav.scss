@@ -1,0 +1,9 @@
+@mixin m-sideNav() {
+  position: relative;
+  height: 100%;
+  background: $main_color;
+
+  &.is-close {
+    width: 72px;
+  }
+}

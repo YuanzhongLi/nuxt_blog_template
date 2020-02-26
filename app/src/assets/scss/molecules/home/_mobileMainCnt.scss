@@ -1,0 +1,67 @@
+@mixin m-mobileMainCnt() {
+  padding: 0 8px;
+
+  &__item {
+    float: inherit;
+    padding: 8px 0;
+    width: 100%;
+
+    & + .m-mobileMainCnt__item {
+      border-top: 1px solid $element_border;
+    }
+
+    &--end {
+      position: relative;
+
+      &::after {
+        @include flex-center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.8);
+        font-size: 1.4rem;
+        font-weight: bold;
+        content: '募集終了しました';
+      }
+    }
+  }
+
+  &__action {
+    overflow: hidden;
+    display: flex;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+
+    &Item {
+      flex: 1;
+    }
+
+    &Anchor {
+      @include flex-center;
+      padding: 8px 0;
+      width: 100%;
+      font-weight: bold;
+      font-size: 1.2rem;
+
+      &Item {
+        width: 100%;
+      }
+
+      &--fav {
+        background: $white2f2;
+        color: $favorite_action;
+      }
+
+      &--dismiss {
+        background: lighten($ignore_action, 60%);
+        color: $ignore_action;
+      }
+    }
+
+    &Icon {
+      margin-right: 4px;
+    }
+  }
+}

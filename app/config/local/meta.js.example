@@ -1,3 +1,4 @@
 export default {
-  TARGET: 'common',
+  // Docker コンテナを利用しない場合は `ordinary` に変更する
+  TARGET: 'ordinary',
 };

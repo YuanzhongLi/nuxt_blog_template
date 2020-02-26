@@ -1,0 +1,109 @@
+@mixin m-searchModal() {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  z-index: 2;
+  overflow-y: scroll;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    @include flex-center;
+    height: 56px;
+    background: $white;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    text-align: center;
+
+    &Ttl {
+      margin-bottom: 4px;
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    &Sub {
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    @include inline-flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: $text_secondary;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+  }
+
+  &__switch {
+    margin: 12px 12px 8px;
+  }
+
+  &__main {
+    padding-top: 56px;
+    &Cnt {
+      margin: 12px;
+      &Tag {
+        @include tag;
+      }
+    }
+  }
+  &__detail {
+    padding: 12px;
+    border-top: 1px solid $element_border;
+    &Ttl {
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
+    &Item {
+      margin-top: 16px;
+      &Ttl {
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      &Check {
+        @include flex-align-items-center;
+        flex-wrap: wrap;
+      }
+      &Option {
+        margin: 8px 0 4px;
+        width: 50%;
+        flex-shrink: 0;
+      }
+    }
+  }
+  &__input {
+    box-sizing: border-box;
+    padding: 12px 8px;
+    width: 100%;
+    border: 1px solid $element_border;
+    font-size: 1.4rem;
+    @include placeholder-color($input_placeholder);
+  }
+  &__btn {
+    display: block;
+    margin-top: 32px;
+    padding: 20px 0;
+    text-align: center;
+    background: $btn_action_primary;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    &Icon {
+      margin-right: 4px;
+    }
+  }
+}

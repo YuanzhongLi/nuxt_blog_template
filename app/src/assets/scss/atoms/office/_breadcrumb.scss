@@ -1,0 +1,27 @@
+@mixin a-breadcrumb() {
+  &__list {
+    @include flex-align-items-center;
+    font-size: 1.3rem;
+  }
+  &__item {
+    @include flex-align-items-center;
+    & + .a-breadcrumb__item {
+      &::before {
+        display: inline-block;
+        margin: 0 6px;
+        width: 4px;
+        height: 4px;
+        border-right: 1px solid $text_secondary;
+        border-top: 1px solid $text_secondary;
+        transform: rotate(45deg);
+        content: '';
+      }
+    }
+  }
+  &__anchor {
+    @include text-link($text_link);
+  }
+  &__txt {
+    color: $text_secondary;
+  }
+}

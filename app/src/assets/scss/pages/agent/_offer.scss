@@ -1,0 +1,38 @@
+@mixin p-offer() {
+  position: relative;
+  max-height: 100%;
+  overflow-y: scroll;
+
+  &__cnt {
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  &__ttl {
+    margin: 48px 0 24px;
+    text-align: center;
+    color: $text_primary;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  &__item {
+    & + .p-offer__item {
+      margin-top: 16px;
+    }
+  }
+
+  &__submit {
+    margin: 32px 0;
+    text-align: center;
+
+    &Btn {
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 1.4rem;
+      border-radius: 2px;
+      border: none;
+      @include action-btn($btn_action_primary, $white);
+    }
+  }
+}

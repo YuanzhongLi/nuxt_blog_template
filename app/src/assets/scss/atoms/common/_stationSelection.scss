@@ -1,0 +1,79 @@
+@mixin a-stationSelection() {
+  width: 100%;
+  position: relative;
+
+  &__box {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+    background: $light_bg;
+  }
+
+  &__input {
+    position: sticky;
+    top: 0;
+    box-sizing: border-box;
+    padding: 12px 8px;
+    width: 100%;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+  }
+
+  &__list {
+    margin-top: 8px;
+    overflow-y: scroll;
+    max-height: 100px;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 8px;
+    border-radius: calc((1.2rem + 16px) / 2);
+    background: $main_color;
+    color: $white;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+      background: darken($main_color, 10%);
+    }
+
+    &Txt {
+      margin-top: 12px;
+      text-align: center;
+      color: $text_secondary;
+      font-size: 1.1rem;
+    }
+  }
+
+  .sug__list {
+    ul {
+      margin: 4px 0 0 0;
+      padding: 4px;
+      overflow-x: auto;
+      overflow-y: scroll;
+      max-height: 40vh;
+
+      li {
+        font-size: 1rem;
+        padding: 4px 1px;
+        cursor: pointer;
+        list-style: none;
+        line-height: 1;
+
+        &.sug__item:hover {
+          background: aliceblue;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@mixin point() {
+  padding: 96px 0 36px;
+  background: $white;
+  text-align: center;
+
+  &__ttl {
+    margin-bottom: 24px;
+    color: $lp_ttl;
+    font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+
+    &::before {
+      display: inline-block;
+      margin-bottom: 4px;
+      width: 52px;
+      height: 14px;
+      background: url(~assets/images/lp/point.png) center center /contain no-repeat;
+      content: '';
+    }
+  }
+
+  &__list {
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
+  &__item {
+    width: 236px;
+
+    & + .point__item {
+      margin-left: 64px;
+    }
+
+    &Ttl {
+      margin-bottom: 8px;
+      color: $lp_ttl;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    &Txt {
+      color: $text_secondary;
+      font-size: 1.4rem;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    &::before {
+      display: inline-block;
+      margin-bottom: 16px;
+      width: 216px;
+      height: 212px;
+      content: '';
+    }
+
+    &--01 {
+      &::before {
+        background: url(~assets/images/lp/point-01.png) center center /contain no-repeat;
+      }
+    }
+
+    &--02 {
+      &::before {
+        background: url(~assets/images/lp/point-02.png) center center /contain no-repeat;
+      }
+    }
+
+    &--03 {
+      &::before {
+        background: url(~assets/images/lp/point-03.png) center center /contain no-repeat;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__list {
+      display: block;
+    }
+
+    &__item {
+      margin: 0 auto;
+
+      & + .point__item {
+        margin: 24px auto 0;
+      }
+    }
+  }
+}

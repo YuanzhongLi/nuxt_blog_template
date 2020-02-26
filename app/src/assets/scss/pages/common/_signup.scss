@@ -1,0 +1,218 @@
+@mixin p-signup() {
+  padding: 48px;
+  min-height: 100vh;
+  &__ttl {
+    margin-bottom: 8px;
+    padding: 4px 0 4px 8px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-left: 3px solid $text_primary;
+  }
+
+  &::before {
+    display: block;
+    margin: 0 auto 24px;
+    width: 180px;
+    height: 51px;
+    background: url('~assets/images/logo_rec_black.svg') center center /180px 51px no-repeat;
+    content: '';
+  }
+
+  &__agent {
+    text-align: center;
+
+    &Cnt {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 6px 12px;
+      border-radius: calc((1.3rem + 16px) / 2);
+      color: $main_color;
+      border: 1px solid $main_color;
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+  }
+  &__tag {
+    display: inline-block;
+    margin: 2px;
+    padding: 4px 6px;
+    border-radius: 2px;
+    background: $main_color;
+    color: $white;
+    font-size: 13px;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    &Icon {
+      margin-left: 4px;
+    }
+  }
+
+  &__area {
+    overflow-y: scroll;
+    margin-top: 8px;
+    padding: 4px;
+    max-height: 100px;
+    background: $white;
+    border: 1px solid $element_border;
+    border-radius: 2px;
+
+    &Item {
+      @include inline-flex-align-items-center;
+      margin: 4px;
+      padding: 4px 8px 4px 4px;
+      border-radius: calc((1.2rem + 16px) / 2);
+      background: $input_icon;
+      color: $white;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__textAnchor {
+    font-size: 1.3rem;
+    @include text-link($text_link);
+  }
+
+  &__form {
+    margin: 0 auto 32px;
+    padding: 32px 40px;
+    width: 760px;
+    background: $white;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+
+    &Ttl {
+      margin-bottom: 32px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    &Footer {
+      @include flex-align-items-center;
+      justify-content: space-between;
+    }
+  }
+
+  &__list {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    &Ttl {
+      margin-bottom: 12px;
+      padding: 4px 8px;
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.3rem;
+      border-left: 3px solid $text_primary;
+      line-height: 1;
+    }
+    &--flex {
+      display: flex;
+
+      &Cnt {
+        width: 50%;
+
+        & + .p-signup__item--flexCnt {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &Label {
+      margin: 12px 0 8px;
+      color: $text_primary;
+      font-size: 1.1rem;
+    }
+
+    &Account {
+      margin-right: 8px;
+      width: 96px;
+      height: 96px;
+      &Cnt {
+        flex: 1;
+        &Input {
+          & + .p-signup__itemAccountCntInput {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
+
+    & + .p-signup__item {
+      margin-top: 12px;
+    }
+  }
+
+  &__check {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.3rem;
+    &Anchor {
+      @include text-link($text_link);
+    }
+  }
+
+  &__save {
+    text-align: center;
+
+    &Btn {
+      display: inline-block;
+      margin: 24px 0;
+      padding: 16px 48px;
+      background: $btn_action_primary;
+      border: none;
+      border-radius: 2px;
+      color: $white;
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        background: darken($btn_action_primary, 15%);
+      }
+    }
+  }
+  &__tag {
+    @include tag;
+  }
+
+  &--sp {
+    padding: 48px 0;
+    min-height: 100vh;
+
+    &::before {
+      width: 170px;
+      height: 48px;
+      background: url('~assets/images/logo_rec_black.svg') center center /170px 48px no-repeat;
+    }
+
+    .p-signup {
+      &__form {
+        margin: 0 12px 32px;
+        padding: 32px 12px;
+        width: auto;
+      }
+
+      &__item {
+        &Account {
+          margin: 0 auto 12px;
+        }
+
+        &--flexCnt {
+          width: 100%;
+          margin: 0;
+
+          & + .p-signup__item--flexCnt {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}

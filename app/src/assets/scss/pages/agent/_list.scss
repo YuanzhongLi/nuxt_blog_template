@@ -1,0 +1,54 @@
+@mixin p-list() {
+  position: relative;
+  max-height: 100%;
+  overflow-y: scroll;
+
+  &__cnt {
+    margin: 16px;
+
+    &Ttl {
+      margin: 24px 0 16px;
+      font-weight: bold;
+      font-size: 2rem;
+      color: $text_primary;
+    }
+
+    &Table {
+      padding: 16px;
+      background: $white;
+      border: 1px solid $element_border;
+      border-radius: 8px;
+    }
+
+    &Search {
+      display: flex;
+      margin-bottom: 16px;
+
+      &Input {
+        width: 300px;
+      }
+
+      &Btn {
+        @include inline-flex-align-items-center;
+        margin-left: 8px;
+        padding: 0 16px;
+        font-size: 1.3rem;
+        border-radius: 2px;
+        cursor: pointer;
+        @include action-btn($btn_action_primary, $white);
+
+        &Icon {
+          margin-right: 4px;
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+
+  &--sp {
+    max-height: inherit;
+    padding: 16px;
+    overflow: inherit;
+    background: $white;
+  }
+}

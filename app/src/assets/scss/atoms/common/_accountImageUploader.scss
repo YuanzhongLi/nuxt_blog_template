@@ -1,0 +1,75 @@
+@mixin a-accountImageUploader() {
+  @include flex-center;
+  width: 100%;
+  border-radius: 50%;
+  background-color: $white;
+  border: 1px solid $element_border;
+  text-align: center;
+  cursor: pointer;
+  color: $text_link;
+
+  &:hover {
+    .a-accountImageUploader__txtLabel {
+      text-decoration: underline;
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include inline-flex-center;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: $white;
+    font-size: 1.1rem;
+    transition: all 0.1s ease-in;
+
+    &Icon {
+      margin-right: 4px;
+      font-size: 1rem;
+    }
+  }
+
+  &--image {
+    position: relative;
+    @include inline-background-image(cover);
+    border: none;
+    overflow: hidden;
+
+    .a-accountImageUploader__txt {
+      display: none;
+    }
+
+    &:hover {
+      .a-accountImageUploader__edit {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__txt {
+    font-size: 1rem;
+
+    &Icon {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.6rem;
+    }
+
+    &Label {
+      line-height: 1.4;
+    }
+  }
+}

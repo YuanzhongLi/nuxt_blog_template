@@ -1,0 +1,83 @@
+@mixin m-mobileTab() {
+  position: sticky;
+  top: 0;
+  background: $white;
+  z-index: 2;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+  &__list {
+    @include flex-align-items-center;
+  }
+  &__item {
+    flex: 1;
+    width: 100%;
+  }
+  &__anchor {
+    display: block;
+    padding: 8px 0;
+    text-align: center;
+    color: $text_secondary;
+    font-size: 1.1rem;
+    &.is-active {
+      color: $main_color;
+      font-weight: bold;
+      .m-mobileTab__icon {
+        opacity: 1;
+      }
+      .m-mobileTab__icon--home {
+        @include nav-icon(home_sp_on);
+      }
+      .m-mobileTab__icon--message {
+        @include nav-icon(message_sp_on);
+      }
+      .m-mobileTab__icon--search {
+        @include nav-icon(search_sp_on);
+      }
+      .m-mobileTab__icon--map {
+        @include nav-icon(map_sp_on);
+      }
+      .m-mobileTab__icon--myBuildings {
+        @include nav-icon(myBuildings_sp_on);
+      }
+      .m-mobileTab__icon--list {
+        @include nav-icon(tenantList_sp_on);
+      }
+    }
+  }
+  &__icon {
+    display: block;
+    margin: 0 auto 8px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+    &--home {
+      @include nav-icon(home);
+    }
+
+    &--map {
+      @include nav-icon(map);
+    }
+
+    &--message {
+      @include nav-icon(message);
+    }
+
+    &--tenantList {
+      @include nav-icon(tenantList);
+    }
+
+    &--offer {
+      @include nav-icon(offer);
+    }
+
+    &--search {
+      @include nav-icon(search);
+    }
+
+    &--myBuildings {
+      @include nav-icon(myBuildings);
+    }
+    &--list {
+      @include nav-icon(tenantList);
+    }
+  }
+}

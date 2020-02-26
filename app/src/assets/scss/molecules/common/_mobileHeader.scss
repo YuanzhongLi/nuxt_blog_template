@@ -1,0 +1,56 @@
+@mixin m-mobileHeader() {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 12px;
+  background: $white;
+  border-top: 4px solid $accent_color2;
+  @include flex-align-items-center;
+  justify-content: space-between;
+
+  &__logo {
+    width: 100px;
+    height: 28px;
+    border: none;
+    background: url('~assets/images/logo_rec_black.svg') center center /100px 28px no-repeat;
+    text-indent: -9999px;
+  }
+  &__account {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    @include inline-background-image(32px);
+  }
+
+  &__list {
+    @include inline-flex-align-items-center;
+  }
+
+  &__item {
+    & + .m-mobileHeader__item {
+      margin-left: 8px;
+    }
+
+    &Anchor {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: calc((1.2rem + 24px) / 2);
+      text-decoration: none;
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: all 0.3s ease;
+
+      &--signup {
+        background: $btn_action_primary;
+        color: $white;
+        font-weight: bold;
+      }
+
+      &--login {
+        border: 1px solid $element_border;
+        @include text-link($text_link);
+      }
+    }
+  }
+}

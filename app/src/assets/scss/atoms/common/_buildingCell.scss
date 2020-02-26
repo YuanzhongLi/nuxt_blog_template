@@ -1,0 +1,148 @@
+@mixin a-buildingCell() {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  background: $white;
+  &--emap {
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    &:hover {
+      background: $cell_hover;
+    }
+  }
+
+  &.is-active {
+    background: $cell_hover;
+
+    .a-buildingCell__bodyTtl {
+      font-weight: bold;
+    }
+  }
+
+  &.is-favorite {
+    background: lighten($favorite_action, 26%);
+  }
+
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+
+  &__head {
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+
+    &Thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 2px;
+      @include inline-background-image(cover);
+    }
+
+    &Action {
+      position: absolute;
+      top: 64px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      width: 40px;
+      @include inline-flex-align-items-center;
+      justify-content: space-between;
+
+      &Item {
+        & + .a-buildingCell__headActionItem {
+          margin-left: 12px;
+        }
+      }
+
+      &Anchor {
+        cursor: pointer;
+        &.is-active {
+          .a-buildingCell__headActionIcon--fav {
+            opacity: 1;
+          }
+
+          .a-buildingCell__headActionIcon--dismiss {
+            opacity: 1;
+          }
+        }
+
+        &:hover {
+          .a-buildingCell__headActionIcon--fav {
+            opacity: 1;
+          }
+
+          .a-buildingCell__headActionIcon--dismiss {
+            opacity: 1;
+          }
+        }
+      }
+
+      &Icon {
+        &--fav {
+          color: $favorite_action;
+          font-size: 1.6rem;
+          opacity: 0.4;
+          transition: all 0.1s ease-in;
+        }
+
+        &--dismiss {
+          color: $ignore_action;
+          font-size: 1.8rem;
+          opacity: 0.4;
+          transition: all 0.1s ease-in;
+        }
+      }
+    }
+  }
+
+  &__body {
+    float: left;
+    width: calc(100% - 64px);
+    text-align: left;
+
+    &Name {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1.4;
+      @include text-link($text_link);
+    }
+
+    &List {
+      color: $text_secondary;
+      font-size: 1.2rem;
+
+      &Ttl {
+        display: none;
+      }
+
+      &Cnt {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 4px;
+      }
+
+      &Icon {
+        margin-right: 8px;
+        width: 14px;
+        height: 14px;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+
+      &Txt {
+        line-height: 1.2;
+        @include text-skip;
+      }
+    }
+  }
+  &--sp {
+    padding: 8px 0;
+  }
+}

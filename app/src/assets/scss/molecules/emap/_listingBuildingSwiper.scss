@@ -1,0 +1,88 @@
+@mixin m-listingBuildingSwiper() {
+  .swiper-container {
+    overflow: initial;
+  }
+  &__list {
+    position: fixed;
+    bottom: 44px;
+    height: auto;
+  }
+
+  &__item {
+    background: $white;
+  }
+
+  &__pagination {
+    position: fixed;
+    right: 0;
+    bottom: 8px;
+    left: 0;
+    margin: 0 auto;
+    width: 72px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 14px;
+    color: $white;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 28px;
+  }
+
+  &__btn {
+    position: fixed;
+    z-index: 2;
+    @include flex-center;
+    bottom: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.6);
+
+    &Icon {
+      color: $white;
+      font-size: 1.4rem;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.4;
+    }
+
+    &--prev {
+      left: 8px;
+      text-indent: -2px;
+    }
+
+    &--next {
+      right: 8px;
+      text-indent: 2px;
+    }
+  }
+
+  &Empty {
+    position: fixed;
+    right: 16px;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1;
+    padding: 16px 0;
+    background: $white;
+    border-radius: 4px;
+    color: $text_primary;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.5;
+
+    &__txt {
+      margin-bottom: 24px;
+    }
+
+    &__btn {
+      display: inline-block;
+      padding: 12px 48px;
+      border: 0;
+      border-radius: 4px;
+      font-size: 1.4rem;
+      @include action-btn($btn_action_primary, $white);
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@mixin m-accountBox() {
+  &__account {
+    padding: 12px 8px;
+    border-bottom: 1px solid $element_border;
+
+    &Level {
+      margin-top: 12px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    padding: 12px 8px;
+
+    &Head {
+      @include flex-align-items-center;
+      justify-content: space-between;
+      font-size: 1.3rem;
+
+      &Ttl {
+        color: $text_primary;
+        font-weight: bold;
+      }
+
+      &Anchor {
+        display: inline-block;
+        @include text-link($text_link);
+
+        &Icon {
+          margin-right: 4px;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  &__switch {
+    margin-top: 12px;
+  }
+
+  &__condition {
+    margin-top: 12px;
+  }
+
+  &--sp {
+    .m-accountBox {
+      &__expand {
+        margin-top: 12px;
+        text-align: center;
+
+        &Anchor {
+          display: inline-block;
+          color: $text_link;
+          font-size: 1.3rem;
+          cursor: pointer;
+
+          &.is-open {
+            .m-accountBox__expandAnchorIcon {
+              transform: rotate(180deg);
+            }
+          }
+
+          &Icon {
+            margin-left: 4px;
+            transition: all 0.3s ease-in;
+          }
+        }
+      }
+    }
+  }
+}

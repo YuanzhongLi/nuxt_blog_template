@@ -1,0 +1,82 @@
+@mixin a-mobileFileCell() {
+  display: flex;
+  margin-bottom: 8px;
+
+  &__file {
+    @include flex-center;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    border: 1px solid $element_border;
+    border-radius: 4px;
+    background: $light_bg;
+    color: $text_link;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    &Icon {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+
+  &__body {
+    @include text-skip;
+    flex: 1;
+    margin-right: 8px;
+
+    &Account {
+      @include flex-align-items-center;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.4rem;
+
+      &Thumb {
+        margin-right: 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        @include inline-background-image(cover);
+      }
+
+      &Info {
+        @include text-skip;
+        flex: 1;
+
+        &Txt {
+          @include text-skip;
+
+          &--sub {
+            margin-bottom: 4px;
+            color: $text_secondary;
+            font-weight: normal;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    &Comment {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      white-space: initial;
+
+      &Anchor {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        color: $text_link;
+        background: $white;
+        font-size: 1.3rem;
+        z-index: 1;
+
+        &Skip {
+          color: $text_primary;
+        }
+      }
+    }
+  }
+}

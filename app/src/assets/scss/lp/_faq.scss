@@ -1,0 +1,125 @@
+@mixin faq() {
+  padding: 40px 0 16px;
+  background: $white;
+  border: 1px solid $element_border;
+
+  &__head {
+    @include flex-align-items-center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    &Ttl {
+      color: $lp_ttl;
+      font-weight: bold;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+
+      &::before {
+        display: inline-block;
+        margin-bottom: 4px;
+        width: 36px;
+        height: 16px;
+        background: url(~assets/images/lp/faq.png) center center /contain no-repeat;
+        content: '';
+      }
+    }
+
+    &Anchor {
+      @include text-link($text_link);
+      font-size: 1.6rem;
+    }
+  }
+
+  &__cnt {
+    margin: 0 auto;
+    width: 1024px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 1024px;
+  }
+
+  &__item {
+    margin: 24px 48px 24px 0;
+    width: 488px;
+    flex-shrink: 0;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+
+  &__question {
+    @include flex-align-items-center;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+    &::before {
+      display: inline-block;
+      margin-right: 8px;
+      content: 'Q.';
+      color: $faq_q;
+      font-size: 3.2rem;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+  }
+
+  &__answer {
+    display: flex;
+    align-self: flex-start;
+    margin-top: 16px;
+
+    &::before {
+      display: inline-block;
+      margin-right: 8px;
+      content: 'A.';
+      color: $faq_a;
+      font-weight: bold;
+      font-size: 3.2rem;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    /deep/ {
+      div {
+        margin-top: 8px;
+      }
+
+      p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  &--sp {
+    .faq {
+      &__head {
+        margin: 0 16px 16px;
+      }
+
+      &__cnt {
+        width: auto;
+      }
+
+      &__list {
+        display: block;
+        margin: inherit;
+        width: 100%;
+      }
+
+      &__item {
+        margin: 0 16px;
+        padding: 20px 0;
+        width: auto;
+
+        & + .p-faq__item {
+          border-top: 1px solid $element_border;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+@mixin chatForm() {
+  &__list {
+    position: relative;
+    padding: 16px 8px;
+    height: 280px;
+    overflow-y: scroll;
+    box-shadow: 0 0 4px 1px rgba(17, 31, 51, 0.1) inset;
+    background: $base_color;
+    border-radius: 8px;
+  }
+
+  &__item {
+    & + .chatForm__item {
+      margin-top: 8px;
+    }
+
+    &--bot {
+      text-align: left;
+    }
+
+    &--tenant {
+      text-align: right;
+    }
+  }
+
+  &__suggest {
+    margin-top: 12px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    font-size: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &Item {
+      padding: 8px 12px;
+      border-radius: calc((1.3rem + 16px) / 2);
+      background: $white;
+      border: 1px solid $element_border;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: top;
+      white-space: normal;
+      font-size: 1.3rem;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__bot {
+    display: inline-flex;
+    align-items: flex-start;
+    max-width: 75%;
+
+    &Thumb {
+      margin-right: 8px;
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+      @include inline-background-image(cover);
+    }
+
+    &Message {
+      flex: 1;
+      box-sizing: border-box;
+      padding: 8px;
+      background: $white;
+      border: 1px solid $element_border;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__tenant {
+    display: inline-flex;
+    align-items: flex-end;
+    max-width: 75%;
+
+    &Message {
+      padding: 8px;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      background: $message_comment;
+      color: $white;
+      text-align: left;
+    }
+
+    &Edit {
+      margin: 0 4px 8px 0;
+      color: $text_secondary;
+      font-size: 1rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__input {
+    display: flex;
+    margin-top: 12px;
+    width: 100%;
+
+    &Box {
+      box-sizing: border-box;
+      flex: 1;
+      border: 1px solid $element_border;
+      border-radius: 4px;
+      margin-right: 8px;
+      height: 40px;
+      text-indent: 4px;
+      font-size: 1.3rem;
+      @include placeholder-color($input_placeholder);
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &Btn {
+      padding: 0 12px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 4px;
+      border: none;
+      font-size: 1.3rem;
+      text-align: center;
+      @include action-btn($btn_action_primary, $white);
+
+      &--area,
+      &--finish {
+        margin-top: 8px;
+      }
+
+      &Icon {
+        margin-right: 8px;
+      }
+    }
+  }
+}

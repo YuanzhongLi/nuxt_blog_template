@@ -1,0 +1,32 @@
+@mixin a-resultBuildingItem() {
+  display: flex;
+  align-items: flex-start;
+  &__thumb {
+    width: 104px;
+    height: 104px;
+    @include inline-background-image(contain);
+    border-radius: 2px;
+  }
+  &__info {
+    margin-left: 12px;
+    flex: 1;
+    &Ttl {
+      font-weight: bold;
+      font-size: 1.6rem;
+      @include text-link($text_link);
+    }
+    &List {
+      margin-top: 12px;
+      font-size: 1.3rem;
+    }
+    &Item {
+      display: flex;
+      & + .a-resultBuildingItem__infoItem {
+        margin-top: 8px;
+      }
+    }
+    &Name {
+      margin-left: 12px;
+    }
+  }
+}

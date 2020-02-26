@@ -1,0 +1,27 @@
+@mixin m-listing() {
+  &__item {
+    position: relative;
+
+    &End {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      @include flex-center;
+      background: rgba(109, 109, 109, 0.8);
+      z-index: 1;
+      color: $white;
+      font-weight: bold;
+      font-size: 1.4rem;
+
+      &Icon {
+        margin-right: 4px;
+      }
+    }
+
+    & + .m-listing__item {
+      border-top: 1px solid $element_border;
+    }
+  }
+}

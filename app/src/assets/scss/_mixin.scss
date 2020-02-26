@@ -1,0 +1,108 @@
+@mixin fade-enter($opacityRate) {
+  opacity: #{$opacityRate};
+}
+@mixin fade-enter-active($second) {
+  transition: opacity #{$second}s;
+}
+@mixin fade-leave-active($second) {
+  transition: opacity #{$second}s;
+  position: absolute;
+}
+@mixin fade-leave-to($opacityRate) {
+  opacity: #{$opacityRate};
+}
+@mixin placeholder-color($color) {
+  &::placeholder {
+    color: $color;
+  }
+  // IE
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Edge
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+}
+@mixin inline-background-image($size) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-color: $white;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+@mixin action-btn($bg_color, $txt_color) {
+  background: $bg_color;
+  color: $txt_color;
+  transition: all 0.3s ease-out;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background: darken($bg_color, 15%);
+  }
+}
+@mixin text-link($color) {
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+@mixin text-skip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin multi-text-skip($num) {
+  overflow: hidden;
+  display: -webkit-box;
+  /* stylelint-disable */
+  -webkit-box-orient: vertical;
+  /* stylelint-enable */
+  -webkit-line-clamp: $num;
+}
+@mixin interest-action($color, $normalRatio, $hoverRatio) {
+  background: lighten($color, $normalRatio);
+  color: $color;
+  &:hover {
+    background: lighten($color, $hoverRatio);
+  }
+}
+@mixin flex-align-items-center {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin inline-flex-align-items-center {
+  display: inline-flex;
+  align-items: center;
+}
+@mixin inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin tag {
+  display: inline-block;
+  margin: 2px;
+  padding: 4px 6px;
+  border-radius: 2px;
+  background: $main_color;
+  color: $white;
+  font-size: 13px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  &Icon {
+    margin-left: 4px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+@mixin nav-icon($string) {
+  background: url('~assets/images/icon/#{$string}.png') center center /contain no-repeat;
+}

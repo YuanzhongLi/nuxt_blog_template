@@ -1,0 +1,73 @@
+@mixin a-comment() {
+  display: inline-flex;
+  align-items: flex-end;
+
+  &__cnt {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  &__thumb {
+    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    @include inline-background-image(cover);
+  }
+
+  &__txt {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 16px;
+    background: $white;
+    border: 1px solid $element_border;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    text-align: left;
+    line-height: 1.5;
+
+    &Cnt {
+      word-break: break-all;
+    }
+
+    &--receiver {
+      background: $message_comment;
+      color: $white;
+      border: none;
+    }
+  }
+
+  &__time {
+    color: $text_secondary;
+    font-size: 1.2rem;
+
+    &--sender {
+      margin: 0 0 4px 8px;
+    }
+
+    &--receiver {
+      margin: 0 8px 4px 0;
+    }
+  }
+
+  &__quote {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 0 4px;
+    border-radius: 2px;
+    background: #f6f6f6;
+    transition: all 0.3s ease-in;
+    color: #8195af;
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  &__email {
+    white-space: pre-line;
+    border-left: 4px solid #eee;
+    margin-top: 8px;
+    padding-left: 8px;
+  }
+}

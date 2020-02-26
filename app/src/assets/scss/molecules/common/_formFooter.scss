@@ -1,0 +1,42 @@
+@mixin m-formFooter() {
+  text-align: center;
+
+  &__list {
+    @include inline-flex-align-items-center;
+  }
+
+  &__item {
+    & + .m-formFooter__item {
+      &::before {
+        display: inline-block;
+        margin: 0 6px;
+        width: 6px;
+        height: 1px;
+        background: $element_border;
+        content: '';
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &__anchor {
+    font-size: 1.3rem;
+    @include text-link($text_link);
+  }
+
+  &--sp {
+    .m-formFooter {
+      &__list {
+        display: block;
+      }
+
+      &__item {
+        margin-top: 16px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}

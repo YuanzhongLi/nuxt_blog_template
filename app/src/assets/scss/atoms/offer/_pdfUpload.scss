@@ -1,0 +1,138 @@
+@mixin a-pdfUpload() {
+  position: relative;
+  padding: 32px;
+  border: 3px dotted $element_border;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.4rem;
+  background: $white;
+
+  &__thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include inline-background-image(cover);
+
+    &Close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      @include inline-flex-center;
+      color: $white;
+
+      &Icon {
+        font-size: 1.4rem;
+      }
+    }
+
+    &Type {
+      @include flex-align-items-center;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.6);
+      color: $white;
+      z-index: 1;
+      font-weight: bold;
+      font-size: 1.3rem;
+      line-height: 1;
+
+      &Icon {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &--loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include flex-center;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+
+    &Cnt {
+      text-align: center;
+      color: $text_primary;
+      font-weight: bold;
+
+      &::before {
+        display: block;
+        margin: 0 auto 12px;
+        width: 48px;
+        height: 48px;
+        background: url('~assets/images/loading.gif') center center /contain no-repeat;
+        content: '';
+      }
+    }
+  }
+
+  &__icon {
+    margin-bottom: 16px;
+    color: lighten($text_secondary, 16%);
+    font-size: 3.6rem;
+  }
+
+  &__txt {
+    margin-bottom: 16px;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: $btn_action_secondary;
+    border-radius: 2px;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken($btn_action_secondary, 5%);
+    }
+  }
+
+  &__file {
+    display: none;
+  }
+
+  &__list {
+    &::after {
+      display: block;
+      clear: both;
+      height: 0;
+      content: '';
+    }
+  }
+
+  &__delete {
+    z-index: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: $white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    &Icon {
+      margin-right: 2px;
+    }
+  }
+}

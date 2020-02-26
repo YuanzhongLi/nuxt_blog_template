@@ -1,0 +1,42 @@
+@mixin a-notification() {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  left: 16px;
+  @include flex-center;
+  padding: 16px;
+  text-align: center;
+  color: $white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  z-index: 3;
+
+  &__icon {
+    margin-right: 8px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 16px;
+    width: 16px;
+    height: 16px;
+    color: $white;
+    font-size: 1.6rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &--error {
+    background: rgba(255, 0, 65, 0.7);
+  }
+
+  &--success {
+    background: rgba(0, 216, 71, 0.7);
+  }
+}

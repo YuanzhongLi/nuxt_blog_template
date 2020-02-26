@@ -1,0 +1,30 @@
+@mixin m-chatBox() {
+  width: 100%;
+
+  &__item {
+    & + .m-chatBox__item {
+      margin-top: 24px;
+    }
+
+    &--sender {
+      text-align: left;
+
+      & + .m-chatBox__item--sender {
+        margin-top: 8px;
+      }
+    }
+
+    &--receiver {
+      text-align: right;
+
+      & + .m-chatBox__item--receiver {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &__cnt {
+    max-width: 45%;
+    text-align: left;
+  }
+}

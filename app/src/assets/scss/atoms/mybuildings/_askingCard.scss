@@ -1,0 +1,91 @@
+@mixin a-askingCard() {
+  border: 1px solid $element_border;
+  border-radius: 2px;
+  &__table {
+    width: 100%;
+    font-size: 1.2rem;
+    &Head {
+      padding: 8px;
+      background: $table_bg;
+      color: $table_txt;
+      font-weight: bold;
+      border-bottom: 1px solid $element_border;
+      &Cnt {
+        @include flex-align-items-center;
+      }
+      &Info {
+        flex: 1;
+      }
+      &Ttl {
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      &Anchor {
+        display: inline-block;
+        margin-top: 8px;
+        color: $text_link;
+        font-weight: bold;
+        font-size: 1.4rem;
+        &Icon {
+          margin-right: 4px;
+        }
+      }
+      &Thumb {
+        margin-left: 8px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        @include inline-background-image(cover);
+      }
+    }
+    &Body {
+      &Cnt {
+        padding: 8px;
+        width: 50%;
+        border-bottom: 1px dotted $element_border;
+        &--right {
+          text-align: right;
+        }
+        &--last {
+          border-bottom: none;
+        }
+        &Txt {
+          display: block;
+          & + .a-askingCard__tableBodyCntTxt {
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+  &__action {
+    @include flex-align-items-center;
+
+    &Item {
+      width: 100%;
+    }
+
+    &Anchor {
+      @include flex-center;
+      padding: 8px 0;
+      width: 100%;
+      border-top: 1px solid $element_border;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &--fav {
+        @include interest-action($favorite_action, 26%, 24%);
+      }
+
+      &--dismiss {
+        @include interest-action($ignore_action, 60%, 56%);
+      }
+    }
+
+    &Icon {
+      margin-right: 6px;
+      font-size: 1.6rem;
+    }
+  }
+}

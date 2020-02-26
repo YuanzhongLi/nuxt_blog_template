@@ -1,0 +1,103 @@
+@mixin a-inboxCell() {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 12px;
+  width: 100%;
+  color: $text_primary;
+  font-size: 0;
+  transition: all 0.1s ease-in;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    background: $cell_hover;
+  }
+
+  &.is-active {
+    background: $cell_hover;
+  }
+
+  &.is-done {
+    background: $message_is_read;
+    color: $text_secondary;
+
+    &:hover {
+      background: $cell_hover;
+    }
+
+    .a-inboxCell__cntName {
+      font-weight: normal;
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    @include inline-background-image(cover);
+  }
+
+  &__notification {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    display: inline-block;
+    padding: 4px;
+    min-width: 20px;
+    border-radius: 12px;
+    background: $notification;
+    border: 2px solid $white;
+    color: $white;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__cnt {
+    flex: 1;
+    overflow: hidden;
+
+    &Head {
+      @include flex-align-items-center;
+      margin-bottom: 4px;
+      color: $text_secondary;
+      font-size: 1.1rem;
+
+      &Label {
+        @include flex-align-items-center;
+        margin-right: 4px;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      &Id {
+        margin-right: 4px;
+        padding: 2px;
+        border: 1px solid $element_border;
+        font-style: normal;
+      }
+      &Company {
+        flex: 1;
+        @include text-skip;
+      }
+    }
+
+    &Name {
+      margin-bottom: 8px;
+      @include text-skip;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    &Body {
+      @include text-skip;
+      font-size: 1.1rem;
+    }
+  }
+}

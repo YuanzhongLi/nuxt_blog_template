@@ -1,0 +1,75 @@
+@mixin m-Modal() {
+  &__mask {
+    @include flex-center;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+  }
+
+  &__container {
+    width: 340px;
+    margin: 0 auto;
+    padding: 32px;
+    align-items: center;
+    background-color: $white;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    transition: all 0.3s ease;
+  }
+
+  &__header {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text_primary;
+  }
+
+  &__body {
+    margin: 16px 0 24px;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 2px;
+    border: none;
+    font-size: 1.4rem;
+    & + .m-Modal__btn {
+      margin-left: 8px;
+    }
+
+    &--submit {
+      @include action-btn($btn_action_primary, $white);
+    }
+
+    &--cancel {
+      @include action-btn($btn_action_tertiary, $text_link);
+    }
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-leave-active {
+    opacity: 0;
+  }
+
+  &-enter &__container,
+  &-leave-active &__container {
+    transform: scale(1.1);
+  }
+}

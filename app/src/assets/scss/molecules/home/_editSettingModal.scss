@@ -1,0 +1,95 @@
+@mixin m-editSettingModal() {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $white;
+  z-index: 2;
+  overflow-y: scroll;
+
+  &__header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    @include flex-center;
+    height: 56px;
+    background: $white;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    text-align: center;
+
+    &Ttl {
+      margin-bottom: 4px;
+      color: $text_primary;
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+
+    &Sub {
+      color: $text_secondary;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    @include inline-flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: $text_secondary;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+  }
+
+  &__tab {
+    &List {
+      display: flex;
+      border-bottom: 1px solid $element_border;
+      background: $base_color;
+
+      &Item {
+        position: relative;
+        flex: 1;
+        width: 100%;
+
+        & + .m-editSettingModal__tabListItem {
+          &::before {
+            position: absolute;
+            top: 12px;
+            bottom: 12px;
+            left: 0;
+            width: 1px;
+            content: '';
+            background: $element_border;
+          }
+        }
+      }
+
+      &Anchor {
+        display: block;
+        padding: 16px 0;
+        color: $tab_active;
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-align: center;
+
+        &.is-active {
+          font-weight: bold;
+          box-shadow: inset 0 -3px 0 $tab_active;
+        }
+      }
+    }
+  }
+
+  &__main {
+    padding-top: 56px;
+    &Cnt {
+      margin: 12px;
+    }
+  }
+}

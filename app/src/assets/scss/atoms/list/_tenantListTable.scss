@@ -1,0 +1,87 @@
+@mixin a-tenantListTable() {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  &__head {
+    &Cnt {
+      position: sticky;
+      top: 0;
+      border: 1px solid $table_border;
+      padding: 8px;
+      min-width: 72px;
+      color: $table_txt;
+      background: $table_bg;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+  }
+
+  &__body {
+    &Head {
+      padding: 8px;
+      color: $table_txt;
+      background: $table_bg;
+      font-weight: bold;
+      vertical-align: middle;
+      border: 1px solid $table_border;
+    }
+    &Cnt {
+      padding: 8px;
+      max-width: 180px;
+      vertical-align: middle;
+      line-height: 1.3;
+      border: 1px solid $table_border;
+      text-align: center;
+      background: $white;
+
+      &List {
+        text-align: left;
+      }
+
+      &Item {
+        margin-bottom: 12px;
+        &Label {
+          display: inline-block;
+          margin-bottom: 4px;
+          font-weight: bold;
+        }
+        &Cnt {
+          display: block;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &::before {
+          display: inline-block;
+          content: '・';
+        }
+      }
+
+      &--left {
+        text-align: left;
+      }
+    }
+
+    &Memo {
+      margin-bottom: 8px;
+      white-space: pre-line;
+      text-align: left;
+    }
+
+    &Anchor {
+      display: inline-block;
+      margin-top: 4px;
+      color: #4392ff;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

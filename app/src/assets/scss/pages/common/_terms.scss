@@ -1,0 +1,96 @@
+@mixin p-terms() {
+  background: $white;
+  &__cnt {
+    margin: 0 auto;
+    padding: 72px 0;
+    width: 1024px;
+  }
+
+  &__ttl {
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 2.4rem;
+    text-align: center;
+
+    &::after {
+      display: block;
+      margin: 36px auto 0;
+      width: 56px;
+      height: 4px;
+      border-radius: 2px;
+      background: $accent_color2;
+      content: '';
+    }
+  }
+
+  &__scttl {
+    margin: 35px 0 10px;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  &__txt {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  &__lists {
+    margin: 12px 0 0 20px;
+
+    &-in-lists {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+  }
+
+  &__list {
+    &Dcml {
+      list-style-type: decimal;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      & + .p-terms__listDcml {
+        margin-top: 12px;
+      }
+    }
+
+    &LowRoman {
+      list-style-type: lower-roman;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      & + .p-terms__listLowRoman {
+        margin-top: 12px;
+      }
+    }
+
+    &Disc {
+      list-style-type: disc;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      & + .p-terms__listDisc {
+        margin-top: 12px;
+      }
+    }
+  }
+  &__anchor {
+    @include text-link($text_link);
+  }
+  &--sp {
+    .p-terms {
+      &__cnt {
+        margin: 0 16px;
+        width: auto;
+      }
+      &__ttl {
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 2rem;
+        &::after {
+          margin: 16px auto 0;
+          border-radius: 2px;
+          background: $accent_color2;
+          content: '';
+        }
+      }
+    }
+  }
+}

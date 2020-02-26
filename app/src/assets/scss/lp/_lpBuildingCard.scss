@@ -1,0 +1,77 @@
+@mixin a-lpBuildingCard() {
+  overflow: hidden;
+  display: block;
+  background: $white;
+  border: 1px solid $element_border;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    .a-lpBuildingCard__thumbImg {
+      transform: scale(1.1);
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 56.25%;
+
+    &Img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 0.2s linear;
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 78px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0, #000);
+      content: "";
+      z-index: 1;
+    }
+  }
+
+  &__ttl {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    color: $white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    z-index: 2;
+    line-height: 1.4;
+    @include multi-text-skip(2);
+  }
+
+  &__info {
+    padding: 8px;
+    color: $text_secondary;
+    font-size: 1.1rem;
+
+    &Txt {
+      margin-left: 4px;
+      @include text-skip;
+    }
+
+    &Item {
+      @include flex-align-items-center;
+
+      & + .a-lpBuildingCard__infoItem {
+        margin-top: 8px;
+      }
+    }
+  }
+}
